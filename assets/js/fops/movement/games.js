@@ -3,12 +3,7 @@
 // ever uploaded; only the finished score is saved to their progress.
 import { RepCounter, DwellTarget, nodSignal, turnSignal, nextTargetPosition, POSE } from './reps.js';
 import { loadProgress, saveProgress } from '../progress.js';
-
-const VISION = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.0';
-const MODELS = {
-  face: 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',
-  pose: 'https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task',
-};
+import { getLandmarker, openCamera, closeCamera } from './tracker.js';
 
 const GAMES = {
   nod: {
@@ -31,7 +26,6 @@ const video = $('[data-video]');
 const canvas = $('[data-canvas]');
 const ctx = canvas.getContext('2d');
 
-const landmarkers = {};
 let session = null;
 let history = { sessions: [] };
 let voice = 'speechSynthesis' in window;
@@ -61,29 +55,6 @@ function showHistory() {
     : '';
 }
 
-async function getLandmarker(kind) {
-  if (landmarkers[kind]) return landmarkers[kind];
-  const vision = await import(`${VISION}/vision_bundle.mjs`);
-  const files = await vision.FilesetResolver.forVisionTasks(`${VISION}/wasm`);
-  const make = (delegate) => (kind === 'face'
-    ? vision.FaceLandmarker.createFromOptions(files, {
-      baseOptions: { modelAssetPath: MODELS.face, delegate },
-      runningMode: 'VIDEO',
-      numFaces: 1,
-    })
-    : vision.PoseLandmarker.createFromOptions(files, {
-      baseOptions: { modelAssetPath: MODELS.pose, delegate },
-      runningMode: 'VIDEO',
-      numPoses: 1,
-    }));
-  try {
-    landmarkers[kind] = await make('GPU');
-  } catch (e) {
-    landmarkers[kind] = await make('CPU');
-  }
-  return landmarkers[kind];
-}
-
 // ---------- Session ----------
 
 function choose(gameKey) {
@@ -100,22 +71,14 @@ function choose(gameKey) {
 
 async function startCamera() {
   const message = $('[data-camera-message]');
-  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    message.textContent = 'This browser cannot use a camera. Please try Chrome, Edge, or Safari.';
-    message.className = 'form-message error';
-    return;
-  }
   message.className = 'form-message';
   message.textContent = 'Starting the camera and loading the exercise. This can take a few seconds…';
 
   try {
-    session.stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
-      audio: false,
-    });
+    session.stream = await openCamera(video);
   } catch (e) {
     message.className = 'form-message error';
-    message.textContent = 'We could not use your camera. Check that it is plugged in, and choose "Allow" when the browser asks.';
+    message.textContent = e.message;
     return;
   }
 
@@ -128,8 +91,6 @@ async function startCamera() {
     return;
   }
 
-  video.srcObject = session.stream;
-  await video.play();
   begin();
 }
 
@@ -277,9 +238,14 @@ function handlePose(result, now) {
 }
 
 function stopCamera() {
-  if (session && session.stream) session.stream.getTracks().forEach((t) => t.stop());
-  if (session) { session.running = false; cancelAnimationFrame(session.frame); }
-  video.srcObject = null;
+  if (session) {
+    session.running = false;
+    cancelAnimationFrame(session.frame);
+    closeCamera(video, session.stream);
+    session.stream = null;
+  } else {
+    closeCamera(video, null);
+  }
 }
 
 function finish(completed) {

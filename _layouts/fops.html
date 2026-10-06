@@ -40,7 +40,7 @@
         {% assign path = page.url %}
         <a href="{{ '/' | relative_url }}" {% if path == '/' %}aria-current="page"{% endif %}>Home</a>
         <a href="{{ '/events/' | relative_url }}" {% if path == '/events/' %}aria-current="page"{% endif %}>Events</a>
-        <a href="{{ '/play/' | relative_url }}" {% if path == '/play/' or path == '/scam-trainer/' or path == '/bingo/' or path == '/bingo/play/' or path == '/movement/' or path == '/movement/play/' %}aria-current="page"{% endif %}>Play &amp; Learn</a>
+        <a href="{{ '/play/' | relative_url }}" {% if path == '/play/' or path == '/scam-trainer/' or path == '/bingo/' or path == '/bingo/play/' or path == '/movement/' or path == '/movement/play/' or path == '/movement/arcade/' %}aria-current="page"{% endif %}>Play &amp; Learn</a>
         <a href="{{ '/about/' | relative_url }}" {% if path == '/about/' %}aria-current="page"{% endif %}>About Us</a>
         <a class="nav-signin" data-auth-link href="{{ '/signin/' | relative_url }}" {% if path == '/signin/' %}aria-current="page"{% endif %}>Sign In</a>
         <a class="btn btn-donate" href="{{ '/donate/' | relative_url }}">Donate</a>

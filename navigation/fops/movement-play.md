@@ -44,6 +44,7 @@ permalink: /movement/play/
           </select>
         </div>
         <p class="game-weak" data-history></p>
+        <p>Want a game instead? Try the <a href="{{ '/movement/arcade/' | relative_url }}">Movement Arcade</a>: fly a balloon with nods, or pop bubbles with your finger.</p>
       </div>
 
       <!-- Privacy, before the camera turns on -->

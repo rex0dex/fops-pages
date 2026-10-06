@@ -16,8 +16,19 @@ permalink: /movement/
         <h2>Reach and Tap</h2>
         <p>Reach toward targets on the screen to build range of motion.</p>
       </div>
+      <div class="card">
+        <h2>Balloon Ride</h2>
+        <p>Steer a hot-air balloon with gentle nods to collect stars.</p>
+      </div>
+      <div class="card">
+        <h2>Bubble Pop</h2>
+        <p>Point with one finger to pop floating bubbles.</p>
+      </div>
     </div>
-    <p style="margin-top:1.5rem"><a class="btn btn-primary btn-lg" href="{{ '/movement/play/' | relative_url }}">Start Moving</a></p>
+    <div class="btn-row" style="margin-top:1.5rem">
+      <a class="btn btn-primary btn-lg" href="{{ '/movement/play/' | relative_url }}">Start Moving</a>
+      <a class="btn btn-outline btn-lg" href="{{ '/movement/arcade/' | relative_url }}">Movement Arcade</a>
+    </div>
   </div>
 </section>
 
