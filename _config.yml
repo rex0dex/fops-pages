@@ -14,12 +14,12 @@
 #   in _config.yml. It will appear in your document head meta (for Google search
 #   results) and in your feed.xml site description.
 
-title: Open Coding 
-description: "Class of 2026"
-owner_name: John Mortensen
-github_username: jm1021 
-github_repo: "portfolio" 
-baseurl: "/portfolio" 
+title: Friends of Poway Seniors
+description: "Friends of Poway Seniors 2026-27 capstone. Chetan Tiduwar, Aaditya Prem, Kashyap Tubati."
+owner_name: Aaditya Prem
+github_username: rex0dex
+github_repo: "fops-pages"
+baseurl: "/fops-pages"
 future: true
 
 # Build settings
@@ -106,9 +106,9 @@ plugins:
 minima:
   skin: dark
   social_links:
-    - { platform: github, user_url: "https://github.com/open-coding-society" }
-    - { platform: x, user_url: "https://x.com/Open_Coding" }
-    - { platform: youtube, user_url: "https://www.youtube.com/@OpenCodingSociety" } 
+    - { platform: github, user_url: "https://github.com/rex0dex/fops-pages" }
   nav_pages:
-    - navigation/search.md
+    - navigation/fops/events.md
+    - navigation/fops/play.md
     - navigation/about.md
+    - navigation/fops/donate.md

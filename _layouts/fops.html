@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/fops.css' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <script>
+    // Apply the saved text size before the page paints, so it never jumps.
+    try {
+      var s = localStorage.getItem('fops-text-size');
+      if (s) document.documentElement.setAttribute('data-text-size', s);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Friends of Poway Seniors home">
+        <span class="brand-mark" aria-hidden="true">FP</span>
+        <span class="brand-text">
+          <span class="brand-name">Friends of Poway Seniors</span>
+          <span class="brand-tag">Poway, California</span>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        {% assign path = page.url %}
+        <a href="{{ '/' | relative_url }}" {% if path == '/' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/events/' | relative_url }}" {% if path == '/events/' %}aria-current="page"{% endif %}>Events</a>
+        <a href="{{ '/play/' | relative_url }}" {% if path == '/play/' or path == '/scam-trainer/' or path == '/bingo/' or path == '/bingo/play/' or path == '/movement/' or path == '/movement/play/' %}aria-current="page"{% endif %}>Play &amp; Learn</a>
+        <a href="{{ '/about/' | relative_url }}" {% if path == '/about/' %}aria-current="page"{% endif %}>About Us</a>
+        <a class="nav-signin" data-auth-link href="{{ '/signin/' | relative_url }}" {% if path == '/signin/' %}aria-current="page"{% endif %}>Sign In</a>
+        <a class="btn btn-donate" href="{{ '/donate/' | relative_url }}">Donate</a>
+      </nav>
+    </div>
+
+    <div class="text-size-bar">
+      <div class="header-inner">
+        <span id="text-size-label">Text size:</span>
+        <div class="text-size-buttons" role="group" aria-labelledby="text-size-label">
+          <button type="button" data-size="normal" aria-pressed="false">A<span class="sr-only"> Normal</span></button>
+          <button type="button" data-size="large" aria-pressed="false" class="ts-large">A<span class="sr-only"> Large</span></button>
+          <button type="button" data-size="xlarge" aria-pressed="false" class="ts-xlarge">A<span class="sr-only"> Extra large</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {% unless page.hide_title %}
+    <section class="page-hero">
+      <div class="container">
+        <h1>{{ page.title }}</h1>
+        {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+      </div>
+    </section>
+    {% endunless %}
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Friends of Poway Seniors</p>
+        <p>Mickey Cafagna Community Center<br>13094 Civic Center Dr.<br>Poway, CA 92064</p>
+      </div>
+      <div>
+        <p class="footer-head">Visit</p>
+        <ul class="footer-links">
+          <li><a href="{{ '/events/' | relative_url }}">Events</a></li>
+          <li><a href="{{ '/play/' | relative_url }}">Play &amp; Learn</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Support</p>
+        <ul class="footer-links">
+          <li><a href="{{ '/donate/' | relative_url }}">Donate</a></li>
+          <li><a href="https://www.facebook.com/PowaySeniorCenter">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p>PVSCC 501(c)(3) · EIN 51-0183384</p>
+      <p>Website by Chetan Tiduwar, Aaditya Prem, and Kashyap Tubati.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="{{ '/assets/js/fops/site.js' | relative_url }}"></script>
+</body>
+</html>

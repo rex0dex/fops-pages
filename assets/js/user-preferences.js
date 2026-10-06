@@ -31,7 +31,7 @@
       bg: '#0b1220',
       text: '#e6eef8',
       font: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-      size: 14,
+      size: 18,
       accent: '#3b82f6',
     },
     Light: {
