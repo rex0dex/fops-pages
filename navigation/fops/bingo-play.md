@@ -75,7 +75,8 @@ permalink: /bingo/play/
         <div class="bingo-layout">
           <div class="bingo-caller">
             <p class="lesson-kicker" data-caller-label>Current number</p>
-            <div class="ball" data-ball aria-live="assertive" aria-atomic="true">–</div>
+            <canvas class="cage" data-cage width="420" height="340" aria-hidden="true"></canvas>
+            <p class="ball-text" data-ball aria-live="assertive" aria-atomic="true">–</p>
             <p class="ball-count" data-count>0 of 75 called</p>
             <p class="lesson-kicker">Recent numbers</p>
             <ol class="recent" data-recent></ol>

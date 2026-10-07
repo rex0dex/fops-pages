@@ -482,3 +482,7 @@ button.choice { font: inherit; text-align: left; cursor: pointer; width: 100%; }
   border: 3px solid var(--paper); border-radius: var(--radius-sm); transform: scaleX(-1);
   box-shadow: var(--shadow); opacity: 0.85;
 }
+
+/* Bingo cage */
+.cage { display: block; width: 100%; max-width: 21rem; height: auto; margin: 0 auto; }
+.ball-text { font-family: var(--font-head); font-weight: 700; font-size: 2.6rem; color: var(--teal-dark); margin: 0.25rem 0 0; line-height: 1.1; }

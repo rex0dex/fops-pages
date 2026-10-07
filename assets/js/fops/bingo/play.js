@@ -2,11 +2,13 @@
 import { pythonURI, fetchOptions } from '../../api/config.js';
 import { LETTERS, FREE, callOrder, makeCard, winningLines, ballsCalledAt, letterFor, spoken } from './engine.js';
 import { loadProgress, saveProgress } from '../progress.js';
+import { BingoCage } from './cage.js';
 
 const app = document.getElementById('bingo-app');
 const $ = (sel) => app.querySelector(sel);
 const API = `${pythonURI}/api/fops/bingo`;
 const ROOM_KEY = 'fops-bingo-room';
+const cage = new BingoCage($('[data-cage]'));
 
 const game = {
   mode: null,          // 'solo' or 'room'
@@ -25,6 +27,7 @@ const game = {
   room: null,
   clockOffset: 0,      // server time minus this computer's time
   poll: null,
+  drawToken: 0,       // ignores a finished animation if the game moved on
 };
 
 let stats = { played: 0, wins: 0, fastest: null };
@@ -159,10 +162,24 @@ function showCalls(announce) {
   if (game.count >= 75 && !game.over) gameMessage('All 75 numbers have been called.', 'hint');
 }
 
+// Call balls up to `count`. A single new ball is drawn from the spinning cage,
+// and its number is shown, marked, and spoken once it lands in the tray.
+// Jumps (such as rejoining a game in progress) skip the animation.
 function setCount(count, announce = true) {
   if (count === game.count) return;
+  const previous = game.count;
   game.count = count;
-  showCalls(announce);
+  const ball = game.order[count - 1];
+  const token = ++game.drawToken;
+  if (announce && count === previous + 1) {
+    $('[data-ball]').textContent = 'Drawing…';
+    cage.drawBall(ball).then(() => {
+      if (token === game.drawToken && !game.over) showCalls(true);
+    });
+  } else {
+    if (ball) cage.showBall(ball); else cage.reset();
+    showCalls(announce);
+  }
 }
 
 // ---------- Solo ----------
@@ -190,6 +207,8 @@ function beginGame(order, card) {
   game.marked = new Set();
   game.paused = false;
   game.over = false;
+  game.drawToken += 1;
+  cage.reset();
   renderCard();
   gameMessage('');
   $('[data-action="pause"]').textContent = 'Pause';
@@ -221,6 +240,8 @@ function finish(won) {
 
 function backToLobby() {
   stopTimers();
+  game.drawToken += 1;
+  cage.reset();
   try { window.speechSynthesis.cancel(); } catch (e) { /* no speech */ }
   try { sessionStorage.removeItem(ROOM_KEY); } catch (e) { /* storage blocked */ }
   game.room = null;
