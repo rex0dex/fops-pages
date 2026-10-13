@@ -486,3 +486,30 @@ button.choice { font: inherit; text-align: left; cursor: pointer; width: 100%; }
 /* Bingo cage */
 .cage { display: block; width: 100%; max-width: 21rem; height: auto; margin: 0 auto; }
 .ball-text { font-family: var(--font-head); font-weight: 700; font-size: 2.6rem; color: var(--teal-dark); margin: 0.25rem 0 0; line-height: 1.1; }
+
+/* ---------- Size It Up (geography) ---------- */
+
+.geo-board { display: block; width: 100%; max-width: 62rem; height: auto; margin: 0.5rem auto; background: var(--cream); border: 2px solid var(--line); border-radius: var(--radius); touch-action: none; }
+.geo-floor { stroke: var(--line); stroke-width: 3; }
+.geo-ref { fill: var(--ink-soft); }
+.geo-target { fill: var(--coral); }
+.geo-actual { fill: var(--teal); }
+.geo-guess-a { fill: #2f6fb0; }
+.geo-guess-b { fill: var(--coral); }
+.geo-label { font: 700 22px var(--font-body); fill: var(--ink); text-anchor: middle; }
+.geo-label--target { fill: var(--coral-dark); }
+.geo-sub { font: 15px var(--font-body); fill: var(--ink-soft); text-anchor: middle; }
+.geo-handle { cursor: nwse-resize; }
+.geo-handle rect { fill: var(--coral); stroke: var(--paper); stroke-width: 3; }
+.geo-handle text { font: 700 26px var(--font-body); fill: var(--paper); text-anchor: middle; pointer-events: none; }
+.geo-handle:focus-visible rect { stroke: var(--gold); stroke-width: 5; }
+.geo-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 0.75rem; }
+.geo-controls .btn { min-width: 4.2rem; font-size: 1.3rem; }
+.geo-submit { min-width: 10rem; }
+.geo-timer { margin-left: auto; font-weight: 700; color: var(--coral-dark); font-size: 1.3rem; }
+
+/* On phones the header scrolls away instead of covering half the screen. */
+@media (max-width: 960px) {
+  .site-header { position: static; }
+  .game, .move-coach { scroll-margin-top: 1rem; }
+}
