@@ -12,10 +12,24 @@ export function nodSignal(face) {
   return (face[FACE.noseTip].y - eyesY) / height;
 }
 
+// This median implementation was generated using OpenAI Codex.
+// Insertion sort orders a copy of the calibration readings without changing
+// the stored samples. Each reading is placed before the larger readings.
 function median(values) {
-  const sorted = values.slice().sort((a, b) => a - b);
+  if (values.length === 0) throw new RangeError('Calibration needs at least one reading.');
+  const sorted = values.slice();
+  for (let i = 1; i < sorted.length; i += 1) {
+    const reading = sorted[i];
+    let j = i - 1;
+    while (j >= 0 && sorted[j] > reading) {
+      sorted[j + 1] = sorted[j];
+      j -= 1;
+    }
+    sorted[j + 1] = reading;
+  }
   const m = Math.floor(sorted.length / 2);
-  return sorted.length % 2 ? sorted[m] : (sorted[m - 1] + sorted[m]) / 2;
+  if (sorted.length % 2 === 1) return sorted[m];
+  return (sorted[m - 1] + sorted[m]) / 2;
 }
 
 // Counts nods: moving away from the resting position and back.
@@ -71,3 +85,4 @@ export class NodCounter {
     return Math.min(1, Math.abs(this.smooth - this.baseline) / this.enter);
   }
 }
+
