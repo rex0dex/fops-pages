@@ -513,3 +513,19 @@ button.choice { font: inherit; text-align: left; cursor: pointer; width: 100%; }
   .site-header { position: static; }
   .game, .move-coach { scroll-margin-top: 1rem; }
 }
+
+/* Profile page: interest survey */
+.survey { margin-top: 1.5rem; }
+.survey-question { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); padding: 1.25rem 1.25rem 1.4rem; margin: 0 0 1.25rem; }
+.survey-question legend { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--teal-dark); padding: 0 0.4rem; }
+.survey-question .hint { margin: 0.25rem 0 0.75rem; }
+.survey-options { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+.survey-option {
+  min-height: 3.4rem; padding: 0.7rem 1.3rem; font: inherit; font-weight: 700; font-size: 1.05rem;
+  border: 2px solid var(--teal); border-radius: 999px; background: var(--paper); color: var(--teal-dark); cursor: pointer;
+}
+.survey-option:hover { background: var(--teal-tint); }
+.survey-option[aria-pressed="true"] { background: var(--teal); color: var(--paper); }
+.survey-option[aria-pressed="true"]::before { content: "✓ "; }
+.survey-option:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.survey-results { margin-top: 2rem; }

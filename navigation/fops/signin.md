@@ -12,7 +12,8 @@ permalink: /signin/
       <h2>You are signed in</h2>
       <p>Welcome, <strong data-account-name></strong>.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="{{ '/play/' | relative_url }}">Go to Play &amp; Learn</a>
+        <a class="btn btn-primary" href="{{ '/profile/' | relative_url }}">Your Profile &amp; Interests</a>
+        <a class="btn btn-outline" href="{{ '/play/' | relative_url }}">Go to Play &amp; Learn</a>
         <button class="btn btn-outline" type="button" id="signout-button">Sign Out</button>
       </div>
     </div>
