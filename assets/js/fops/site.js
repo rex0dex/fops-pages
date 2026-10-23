@@ -46,6 +46,12 @@ if (authLink) {
         const first = String(user.name).split(' ')[0];
         authLink.textContent = `Hi, ${first}`;
         authLink.setAttribute('href', authLink.getAttribute('href') + '#account');
+        // The OCS top bar shows who is signed in too, like OCS sites do.
+        const ocsLogin = document.querySelector('[data-ocs-login]');
+        if (ocsLogin) {
+          ocsLogin.textContent = first;
+          ocsLogin.setAttribute('href', authLink.getAttribute('href'));
+        }
       }
     })
     .catch(() => { /* backend not reachable: keep "Sign In" */ });

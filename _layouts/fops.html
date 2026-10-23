@@ -21,6 +21,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- OCS top bar: the Open Coding Society bar every OCS site has, with our team's links -->
+  <div class="ocs-topbar">
+    <div class="ocs-topbar-inner">
+      <a class="ocs-topbar-logo" href="https://pages.opencodingsociety.com/" aria-label="Open Coding Society">
+        <img src="{{ '/images/logo.png' | relative_url }}" alt="Open Coding Society">
+      </a>
+      <nav class="ocs-topbar-links" aria-label="Open Coding Society">
+        <a href="https://pages.opencodingsociety.com/capstone/fops-2026-2027/">Capstone</a>
+        <a href="{{ '/board/' | relative_url }}">Project Board</a>
+        <a href="{{ '/profile/' | relative_url }}">My Profile</a>
+        <a href="{{ '/signin/' | relative_url }}" data-ocs-login>Login</a>
+      </nav>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="Friends of Poway Seniors home">

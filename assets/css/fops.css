@@ -529,3 +529,14 @@ button.choice { font: inherit; text-align: left; cursor: pointer; width: 100%; }
 .survey-option[aria-pressed="true"]::before { content: "✓ "; }
 .survey-option:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .survey-results { margin-top: 2rem; }
+
+/* OCS top bar (the Open Coding Society bar on every OCS site), above our header */
+.ocs-topbar { background: #1b1b1f; color: #f2f2f2; font-size: 0.95rem; }
+.ocs-topbar-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0.35rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.ocs-topbar-logo img { height: 30px; width: auto; display: block; }
+.ocs-topbar-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+.ocs-topbar-links a { color: #f2f2f2; text-decoration: none; font-weight: 700; padding: 0.35rem 0; }
+.ocs-topbar-links a:hover, .ocs-topbar-links a:focus-visible { color: var(--gold); text-decoration: underline; }
