@@ -288,7 +288,7 @@ em.accent, h1 em, h2 em { font-style: italic; color: var(--honey); font-weight: 
 
 .bingo-layout { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr); align-items: start; }
 .bingo-caller { text-align: center; }
-.ball { width: 9rem; height: 9rem; margin: 0.5rem auto; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #fff 0 20%, var(--honey-tint) 21% 100%); border: 5px solid var(--sage-deep); font-family: var(--font-display); font-size: 2.2rem; }
+.ball { width: 9rem; height: 9rem; margin: 0.5rem auto; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.95) 0, rgba(255, 255, 255, 0) 32%), var(--honey-tint); border: 5px solid var(--sage-deep); font-family: var(--font-display); font-size: 2.2rem; }
 .ball-count { font-weight: 700; color: var(--ink-3); }
 .recent { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
 .recent li { background: var(--paper-2); border-radius: 999px; padding: 0.15rem 0.7rem; font-weight: 700; }
