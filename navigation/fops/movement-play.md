@@ -1,28 +1,28 @@
 ---
-layout: post
-title: Head Nod
-description: A gentle seated exercise. Nod your head down and up, and your webcam counts each one for you.
+layout: fops
+title: "Head Nod"
+lede: "A gentle seated exercise. Nod your head down and up, and your webcam counts each one for you."
 permalink: /movement/play/
-toc: false
-comments: false
-show_reading_time: false
+back: "/movement/"
+back_label: "Movement Games"
+kicker: "Movement"
 ---
 
-
-
-<div id="nod-app" class="fops-game ocs__card">
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div id="nod-app" class="game">
 
       <!-- Before the camera turns on -->
       <div data-screen="start">
         <h2 class="game-prompt">Head Nod: 10 nods</h2>
-        <ul>
+        <ul class="ticks">
           <li><strong>Your video stays on this computer.</strong> It is not recorded, uploaded, or sent anywhere.</li>
           <li><strong>Stay seated</strong> in a steady chair, about an arm's length from the screen.</li>
           <li><strong>Nod slowly</strong>: chin down, then back up. Only go as far as is comfortable.</li>
           <li>Press the big <strong>Stop</strong> button at any time.</li>
         </ul>
         <p style="margin-top:1.25rem">
-          <button class="ocs__btn alert-green fill large" type="button" data-action="camera">Turn On Camera</button>
+          <button class="btn btn-primary btn-lg" type="button" data-action="camera">Turn On Camera</button>
         </p>
         <p class="form-message" data-camera-message role="status" aria-live="polite"></p>
       </div>
@@ -35,19 +35,21 @@ show_reading_time: false
         <div class="move-stage">
           <video data-video playsinline muted></video>
         </div>
-        <button class="ocs__btn alert-red fill large move-stop" type="button" data-action="stop">Stop</button>
+        <button class="btn btn-donate btn-lg move-stop" type="button" data-action="stop">Stop</button>
       </div>
 
       <!-- Finished -->
       <div data-screen="done" hidden>
         <h2 class="game-prompt" data-done-title>Well done!</h2>
         <p data-summary></p>
-        <div class="ocs__links" style="margin-top:1.25rem">
-          <button class="ocs__btn alert-green fill large" type="button" data-action="again">Do It Again</button>
+        <div class="btn-row" style="margin-top:1.25rem">
+          <button class="btn btn-primary btn-lg" type="button" data-action="again">Do It Again</button>
         </div>
       </div>
 
     </div>
-<noscript><p class="ocs__callout">This exercise needs JavaScript turned on in your browser.</p></noscript>
+    <noscript><p class="note">This exercise needs JavaScript turned on in your browser.</p></noscript>
+  </div>
+</section>
 
 <script type="module" src="{{ '/assets/js/fops/movement/nod.js' | relative_url }}"></script>

@@ -1,42 +1,52 @@
 ---
-layout: post
-title: Movement Games
-description: Seated exercises turned into simple, scored games, using only your webcam.
+layout: fops
+title: "Movement Games"
 permalink: /movement/
-toc: false
-comments: false
-show_reading_time: false
+back: "/play/"
+back_label: "All games"
+kicker: "Movement"
+heading: "Gentle moves, <em>counted</em> for you"
+lede: "Seated exercises turned into simple, scored games, using only your webcam."
 ---
 
-
-<div class="ocs__grid ocs__grid--standard cols-2" style="margin-bottom: 1.5rem;">
-    <div class="ocs__grid-cell ocs__grid-cell--header">The Games</div>
-    <div class="ocs__grid-cell ocs__grid-cell--accent">
-        <strong>Head Nod and Head Turn</strong>
-        <p>Gentle nods and turns, counted and scored as you go.</p>
-        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/movement/play/">Start Moving</a>
-    </div>
-    <div class="ocs__grid-cell">
-        <strong>Reach and Tap</strong>
-        <p>Reach toward targets on the screen to build range of motion.</p>
-    </div>
-    <div class="ocs__grid-cell">
-        <strong>Balloon Ride</strong>
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="programs">
+      <a class="program reveal" href="{{ '/movement/play/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="move" %}</span>
+        <h3>Head Nod</h3>
+        <p>Nod slowly down and up. Your webcam counts each one and cheers you on.</p>
+        <span class="program-go">Start {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program is-soon reveal" href="{{ '/movement/arcade/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="balloon" %}</span>
+        <h3>Balloon Ride <span class="tag">Coming soon</span></h3>
         <p>Steer a hot-air balloon with gentle nods to collect stars.</p>
-        <a class="ocs__btn alert-yellow fill" href="{{ site.baseurl }}/movement/arcade/">Movement Arcade</a>
-    </div>
-    <div class="ocs__grid-cell">
-        <strong>Bubble Pop</strong>
+        <span class="program-go">Take a look {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program is-soon reveal" href="{{ '/movement/arcade/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="heart" %}</span>
+        <h3>Bubble Pop <span class="tag">Coming soon</span></h3>
         <p>Point with one finger to pop floating bubbles.</p>
+        <span class="program-go">Take a look {% include fops/icon.html name="arrow" %}</span>
+      </a>
     </div>
-</div>
+  </div>
+</section>
 
-## Your Privacy
-
-All camera processing happens in your browser. No video is uploaded, stored, or sent anywhere. The site will tell you before the camera turns on.
-
-## Your Safety
-
-- Every exercise is done seated.
-- A large Stop button is always on screen.
-- Go at your own pace. There is no timer pressure.
+<section class="section section-tint">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <h2>Your privacy</h2>
+      <p>All camera processing happens in your browser. No video is uploaded, stored, or sent anywhere. The site tells you before the camera turns on.</p>
+    </div>
+    <div class="reveal">
+      <h2>Your safety</h2>
+      <ul class="ticks">
+        <li>Every exercise is done seated.</li>
+        <li>A large Stop button is always on screen.</li>
+        <li>Go at your own pace. There is no timer.</li>
+      </ul>
+    </div>
+  </div>
+</section>

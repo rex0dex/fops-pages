@@ -1,28 +1,34 @@
 ---
-layout: post
-title: Events
-description: Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway.
+layout: fops
+title: "Events"
 permalink: /events/
-toc: false
-comments: false
-show_reading_time: false
+kicker: "Events"
+heading: "What's <em>happening</em>"
+lede: "Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway. Bingo is in Sycamore Hall; doors open at 9:00 AM."
 ---
 
-> Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway. Bingo is held in Sycamore Hall. Doors open at 9:00 AM.
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="schedule">
+      <div class="slot reveal">
+        <div class="slot-day">Tuesday<small>Every week</small></div>
+        <div><h3>Bingo &amp; Lunch</h3><p>Lunch is served. Pre-order by 1:00 PM on Monday.</p></div>
+        <div class="slot-times">Cards <strong>9:30 AM</strong><br>Game <strong>11:30 AM</strong></div>
+      </div>
+      <div class="slot reveal">
+        <div class="slot-day">Sunday<small>Every week</small></div>
+        <div><h3>Bingo</h3><p>No lunch on Sundays. Snacks and free coffee.</p></div>
+        <div class="slot-times">Cards <strong>10:30 AM</strong><br>Game <strong>12:30 PM</strong></div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem"><a class="btn btn-primary" href="{{ '/bingo/' | relative_url }}">Bingo prices and rules</a></p>
+  </div>
+</section>
 
-## Every Week
-
-<div style="overflow-x: auto;" markdown="1">
-
-| Day | Event | Card Sales | Game Starts | Lunch |
-|-----|-------|------------|-------------|-------|
-| Tuesday | Bingo and Lunch | 9:30 AM | 11:30 AM | Served. Pre-order by 1:00 PM the day before |
-| Sunday | Bingo | 10:30 AM | 12:30 PM | Not available on Sundays |
-
-</div>
-
-<a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/bingo/">Bingo Prices and Rules</a>
-
-## More Events Coming
-
-The Social Lunch, the ReRuns Shoppe, and other events will be listed here with their real dates as we confirm them with Friends of Poway Seniors.
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="note reveal">
+      <p><strong>More events coming.</strong> The Social Lunch, the ReRuns Shoppe, and other events will be listed here with their real dates as we confirm them with Friends of Poway Seniors.</p>
+    </div>
+  </div>
+</section>

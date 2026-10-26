@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.lede | default: page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/fops.css' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <script>
+    // Apply the saved text size before the page paints, so it never jumps.
+    document.documentElement.classList.add('js');
+    try {
+      var s = localStorage.getItem('fops-text-size');
+      if (s && s !== 'normal') document.documentElement.setAttribute('data-text-size', s);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- The Open Coding Society bar every OCS site has, with our team's links -->
+  <div class="ocs-bar">
+    <div class="wrap">
+      <a href="https://pages.opencodingsociety.com/" aria-label="Open Coding Society">
+        <img src="{{ '/images/logo.png' | relative_url }}" alt="">
+      </a>
+      <span class="ocs-bar-label">Open Coding Society capstone</span>
+      <nav aria-label="Open Coding Society">
+        <a href="https://pages.opencodingsociety.com/capstone/fops-2026-2027/">Capstone</a>
+        <a href="{{ '/board/' | relative_url }}">Project Board</a>
+        <a href="{{ '/profile/' | relative_url }}">My Profile</a>
+        <a href="{{ '/signin/' | relative_url }}" data-ocs-login>Login</a>
+      </nav>
+    </div>
+  </div>
+
+  {% assign path = page.url %}
+  {% assign play_paths = "/play/,/scam-trainer/,/bingo/,/bingo/play/,/movement/,/movement/play/,/movement/arcade/,/geography/" | split: "," %}
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#3f5a4c"/>
+          <path d="M20 29c-5-3.4-8-6.6-8-10.2A4.6 4.6 0 0 1 20 16a4.6 4.6 0 0 1 8 2.8c0 3.6-3 6.8-8 10.2Z" fill="#f6f3ec"/>
+          <circle cx="20" cy="10.5" r="2.6" fill="#c9973f"/>
+        </svg>
+        <span class="brand-name">Friends of Poway Seniors<small>Poway, California</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}" {% if path == '/' %}aria-current="page"{% endif %}>Home</a>
+        <div class="nav-drop{% if play_paths contains path %} is-current{% endif %}">
+          <button type="button" aria-expanded="false">Play &amp; Learn{% include fops/icon.html name="chevron" %}</button>
+          <div class="nav-menu">
+            <a href="{{ '/play/' | relative_url }}">All games<small>Everything in one place</small></a>
+            <a href="{{ '/scam-trainer/' | relative_url }}">Spot the Scam<small>Practice the red flags</small></a>
+            <a href="{{ '/bingo/play/' | relative_url }}">Bingo<small>Large print, speaking caller</small></a>
+            <a href="{{ '/movement/' | relative_url }}">Movement Games<small>Seated, webcam-scored</small></a>
+            <a href="{{ '/geography/' | relative_url }}">Size It Up<small>How big is it really?</small></a>
+          </div>
+        </div>
+        <a href="{{ '/events/' | relative_url }}" {% if path == '/events/' %}aria-current="page"{% endif %}>Events</a>
+        <a href="{{ '/about/' | relative_url }}" {% if path == '/about/' %}aria-current="page"{% endif %}>About</a>
+        <a href="{{ '/signin/' | relative_url }}" data-auth-link {% if path == '/signin/' or path == '/profile/' %}aria-current="page"{% endif %}>Sign In</a>
+        <div class="text-size" role="group" aria-label="Text size">
+          <button type="button" data-size="normal" aria-pressed="true">A<span class="sr-only"> normal text</span></button>
+          <button type="button" data-size="large" aria-pressed="false">A<span class="sr-only"> large text</span></button>
+          <button type="button" data-size="xlarge" aria-pressed="false">A<span class="sr-only"> extra large text</span></button>
+        </div>
+        <a class="btn btn-outline-donate" href="{{ '/donate/' | relative_url }}">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {% unless page.hero %}
+    <section class="page-head">
+      <div class="wrap">
+        {% if page.back %}<a class="crumb" href="{{ page.back | relative_url }}">{% include fops/icon.html name="back" %}{{ page.back_label | default: "Back" }}</a>{% endif %}
+        {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
+        <h1>{{ page.heading | default: page.title }}</h1>
+        {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+      </div>
+    </section>
+    {% endunless %}
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <p class="footer-brand">Friends of Poway Seniors</p>
+          <p>Mickey Cafagna Community Center</p>
+          <p>13094 Civic Center Dr., Poway, CA 92064</p>
+        </div>
+        <div>
+          <h3>Visit</h3>
+          <ul>
+            <li><a href="{{ '/events/' | relative_url }}">Events</a></li>
+            <li><a href="{{ '/play/' | relative_url }}">Play &amp; Learn</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Support</h3>
+          <ul>
+            <li><a href="{{ '/donate/' | relative_url }}">Donate</a></li>
+            <li><a href="https://www.facebook.com/PowaySeniorCenter">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>PVSCC · 501(c)(3) nonprofit · EIN 51-0183384</span>
+        <span>Website by Chetan Tiduwar, Aaditya Prem, and Kashyap Tubati</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="{{ '/assets/js/fops/site.js' | relative_url }}"></script>
+</body>
+</html>

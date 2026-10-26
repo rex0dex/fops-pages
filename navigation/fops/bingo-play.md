@@ -1,23 +1,23 @@
 ---
-layout: post
-title: Play Bingo
-description: Large-print Bingo with a speaking caller. The computer calls the numbers, and you can pause any time.
+layout: fops
+title: "Play Bingo"
+lede: "Large-print Bingo with a speaking caller. The computer calls the numbers, and you can pause any time."
 permalink: /bingo/play/
-toc: false
-comments: false
-show_reading_time: false
+back: "/bingo/"
+back_label: "Bingo at Sycamore Hall"
+kicker: "Play online"
 ---
 
-
-
-<div id="bingo-app" class="fops-game ocs__card">
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div id="bingo-app" class="game">
 
       <!-- Start screen -->
       <div data-screen="lobby">
         <h2 class="game-prompt">Ready to play?</h2>
         <div class="game-options">
           <label for="bingo-speed">Time between numbers</label>
-          <select id="bingo-speed" data-speed>
+          <select class="select" id="bingo-speed" data-speed>
             <option value="12">Slow (12 seconds)</option>
             <option value="10" selected>Relaxed (10 seconds)</option>
             <option value="8">Medium (8 seconds)</option>
@@ -25,7 +25,7 @@ show_reading_time: false
           </select>
         </div>
         <p style="margin-top:1.25rem">
-          <button class="ocs__btn alert-green fill large" type="button" data-action="solo">Start Bingo</button>
+          <button class="btn btn-primary btn-lg" type="button" data-action="solo">Start Bingo</button>
         </p>
         <p class="game-weak" data-stats></p>
       </div>
@@ -40,21 +40,23 @@ show_reading_time: false
             <p class="lesson-kicker">Recent numbers</p>
             <ol class="recent" data-recent></ol>
             <div class="bingo-controls">
-              <button class="ocs__btn" type="button" data-action="pause">Pause</button>
-              <button class="ocs__btn" type="button" data-action="voice" aria-pressed="true">Voice: On</button>
-              <button class="ocs__btn" type="button" data-action="automark" aria-pressed="true">Auto-mark: On</button>
-              <button class="ocs__btn" type="button" data-action="quit">End Game</button>
+              <button class="btn btn-ghost" type="button" data-action="pause">Pause</button>
+              <button class="btn btn-ghost" type="button" data-action="voice" aria-pressed="true">Voice: On</button>
+              <button class="btn btn-ghost" type="button" data-action="automark" aria-pressed="true">Auto-mark: On</button>
+              <button class="btn btn-ghost" type="button" data-action="quit">End Game</button>
             </div>
           </div>
           <div class="bingo-board">
             <div class="bingo-card" data-card role="grid" aria-label="Your Bingo card"></div>
-            <button class="ocs__btn alert-red fill large bingo-call" type="button" data-action="bingo">BINGO!</button>
+            <button class="btn btn-donate btn-lg bingo-call" type="button" data-action="bingo">BINGO!</button>
             <div class="game-feedback" data-game-message aria-live="polite"></div>
           </div>
         </div>
       </div>
 
     </div>
-<noscript><p class="ocs__callout">Bingo needs JavaScript turned on in your browser.</p></noscript>
+    <noscript><p class="note">Bingo needs JavaScript turned on in your browser.</p></noscript>
+  </div>
+</section>
 
 <script type="module" src="{{ '/assets/js/fops/bingo/play.js' | relative_url }}"></script>

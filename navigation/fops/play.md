@@ -1,41 +1,45 @@
 ---
-layout: post
-title: Play & Learn
-description: Games and practice made for Friends of Poway Seniors.
+layout: fops
+title: "Play & Learn"
 permalink: /play/
-toc: false
-comments: false
-show_reading_time: false
+kicker: "Play & Learn"
+heading: "Games made for <em>you</em>"
+lede: "Pick one to start. Every game works with big text, and your progress saves when you sign in."
 ---
 
-> Games and practice made for Friends of Poway Seniors. Pick one to start. Sign in to save your progress on any computer.
-
-<div class="ocs__grid ocs__grid--standard cols-2" style="margin-bottom: 1.5rem;">
-    <div class="ocs__grid-cell ocs__grid-cell--header">Games and Practice</div>
-
-    <div class="ocs__grid-cell ocs__grid-cell--accent">
-        <strong>Spot the Scam</strong>
-        <p>Learn the red flags in scam messages, one round at a time.</p>
-        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/scam-trainer/">Start Practicing</a>
+<section class="section" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="programs">
+      <a class="program reveal" href="{{ '/scam-trainer/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="shield" %}</span>
+        <h3>Spot the Scam</h3>
+        <p>Two messages side by side. Decide which one to trust, then tap the red flag.</p>
+        <span class="program-go">Start practicing {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program reveal" href="{{ '/bingo/play/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="bingo" %}</span>
+        <h3>Bingo</h3>
+        <p>Large-print cards and a caller that reads each number out loud. Play alone or with friends.</p>
+        <span class="program-go">Play Bingo {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program reveal" href="{{ '/movement/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="move" %}</span>
+        <h3>Movement Games</h3>
+        <p>Gentle seated exercises, counted by your webcam. Nothing leaves your computer.</p>
+        <span class="program-go">Start moving {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program reveal" href="{{ '/geography/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="globe" %}</span>
+        <h3>Size It Up</h3>
+        <p>How big is Texas next to France? Resize places from real maps against a bot or a friend.</p>
+        <span class="program-go">Play {% include fops/icon.html name="arrow" %}</span>
+      </a>
+      <a class="program is-soon reveal" href="{{ '/movement/arcade/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="balloon" %}</span>
+        <h3>Movement Arcade <span class="tag">Coming soon</span></h3>
+        <p>Fly a balloon with gentle nods, or pop bubbles with one finger.</p>
+        <span class="program-go">Take a look {% include fops/icon.html name="arrow" %}</span>
+      </a>
     </div>
-    <div class="ocs__grid-cell ocs__grid-cell--accent">
-        <strong>Bingo</strong>
-        <p>Large-print Bingo with a speaking caller. Play alone or with friends.</p>
-        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/bingo/play/">Play Bingo</a>
-    </div>
-    <div class="ocs__grid-cell ocs__grid-cell--accent">
-        <strong>Movement Games</strong>
-        <p>Seated exercises as games, using your webcam privately.</p>
-        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/movement/">Start Moving</a>
-    </div>
-    <div class="ocs__grid-cell ocs__grid-cell--accent">
-        <strong>Size It Up</strong>
-        <p>A geography game: make a place the right size next to another. Play a bot or a friend.</p>
-        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/geography/">Play</a>
-    </div>
-    <div class="ocs__grid-cell">
-        <strong>Movement Arcade</strong>
-        <p>Fly a balloon with gentle nods, or pop bubbles with your finger.</p>
-        <a class="ocs__btn alert-yellow fill" href="{{ site.baseurl }}/movement/arcade/">In Progress</a>
-    </div>
-</div>
+  </div>
+</section>

@@ -155,15 +155,15 @@ export function recommend(a) {
 
 function showRecommendations() {
   const recs = recommend(answers);
-  // Each recommendation is an OCS grid cell with a button, like the Play & Learn page.
+  // Each recommendation is a program card, like the ones on the Play & Learn page.
   recBox.replaceChildren(...recs.map((r) => {
-    const cell = document.createElement('div');
-    cell.className = 'ocs__grid-cell ocs__grid-cell--accent';
-    cell.innerHTML = '<strong></strong><p></p><a class="ocs__btn alert-green fill">Go</a>';
-    cell.querySelector('strong').textContent = `${r.icon} ${r.title}`;
-    cell.querySelector('p').textContent = r.text;
-    cell.querySelector('a').href = SITE + r.href;
-    return cell;
+    const link = document.createElement('a');
+    link.className = 'program';
+    link.href = SITE + r.href;
+    link.innerHTML = '<h3></h3><p></p><span class="program-go">Go</span>';
+    link.querySelector('h3').textContent = r.title;
+    link.querySelector('p').textContent = r.text;
+    return link;
   }));
   results.hidden = false;
 }
