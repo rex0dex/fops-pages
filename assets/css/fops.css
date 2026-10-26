@@ -374,3 +374,37 @@ em.accent, h1 em, h2 em { font-style: italic; color: var(--honey); font-weight: 
   .bingo-cell { font-size: 1.2rem; }
   .bingo-head { font-size: 1.3rem; }
 }
+
+/* ---------- Nod to select ---------- */
+.nod-toggle {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font: 600 0.95rem var(--font-body); color: var(--ink-2); cursor: pointer;
+  background: none; border: 1.5px solid var(--line); border-radius: 999px; padding: 0.4rem 0.85rem; min-height: 2.5rem;
+}
+.nod-toggle svg { width: 1.2rem; height: 1.2rem; }
+.nod-toggle:hover { border-color: var(--sage); color: var(--ink); }
+.nod-toggle[aria-pressed="true"] { background: var(--sage-deep); border-color: var(--sage-deep); color: #fff; }
+
+.nod-panel {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 80; width: 14.5rem;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 32px rgba(35, 48, 43, 0.18);
+  padding: 0.9rem; font-size: 0.95rem;
+}
+.nod-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; }
+.nod-panel-head strong { font-family: var(--font-display); font-size: 1.05rem; white-space: nowrap; }
+.nod-off { white-space: nowrap; font: 600 0.85rem var(--font-body); background: none; border: 1.5px solid var(--line); border-radius: 999px; padding: 0.25rem 0.7rem; cursor: pointer; color: var(--ink); }
+.nod-off:hover { border-color: var(--clay); color: var(--clay-deep); }
+.nod-panel video { display: block; width: 100%; height: 5.5rem; border-radius: var(--radius-sm); transform: scaleX(-1); background: var(--night); object-fit: cover; }
+.nod-meter { height: 0.5rem; background: var(--paper-2); border-radius: 999px; overflow: hidden; margin: 0.6rem 0; }
+.nod-meter div { height: 100%; width: 0; background: var(--sage); transition: width 0.15s; }
+.nod-status { margin: 0 0 0.5rem; font-weight: 700; color: var(--ink); min-height: 2.6em; font-size: 0.9rem; line-height: 1.35; }
+.nod-speed { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; color: var(--ink-2); }
+.nod-speed select { font: inherit; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.2rem 0.4rem; background: #fff; }
+
+/* The control a nod will press: big and impossible to miss. */
+.nod-target { outline: 5px solid var(--honey) !important; outline-offset: 4px; box-shadow: 0 0 0 10px rgba(201, 151, 63, 0.22) !important; position: relative; z-index: 2; }
+.nod-pressed { transform: scale(0.96); }
+@media (prefers-reduced-motion: no-preference) { .nod-target { transition: outline-offset 0.2s; } }
+@media (max-width: 640px) { .nod-panel { left: 0.5rem; right: 0.5rem; width: auto; } .nod-panel video { display: none; } }
+.steps { padding-left: 1.4rem; margin: 0; display: grid; gap: 0.8rem; color: var(--ink-2); }
+.steps strong { color: var(--ink); }

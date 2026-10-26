@@ -10,7 +10,7 @@ kicker: "Geography"
 
 <section class="section" style="padding-top:1rem">
   <div class="wrap">
-    <div id="geo-app" class="game">
+    <div id="geo-app" class="game" data-nod-scope>
 
       <!-- Start -->
       <div data-screen="start">

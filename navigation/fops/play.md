@@ -22,23 +22,17 @@ lede: "Pick one to start. Every game works with big text, and your progress save
         <p>Large-print cards and a caller that reads each number out loud. Play alone or with friends.</p>
         <span class="program-go">Play Bingo {% include fops/icon.html name="arrow" %}</span>
       </a>
-      <a class="program reveal" href="{{ '/movement/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="move" %}</span>
-        <h3>Movement Games</h3>
-        <p>Gentle seated exercises, counted by your webcam. Nothing leaves your computer.</p>
-        <span class="program-go">Start moving {% include fops/icon.html name="arrow" %}</span>
+      <a class="program reveal" href="{{ '/accessibility/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="nod" %}</span>
+        <h3>Nod to select</h3>
+        <p>Arthritis or shaky hands? Play every game hands-free: a gentle nod presses the highlighted button.</p>
+        <span class="program-go">See how {% include fops/icon.html name="arrow" %}</span>
       </a>
       <a class="program reveal" href="{{ '/geography/' | relative_url }}">
         <span class="program-icon">{% include fops/icon.html name="globe" %}</span>
         <h3>Size It Up</h3>
         <p>How big is Texas next to France? Resize places from real maps against a bot or a friend.</p>
         <span class="program-go">Play {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program is-soon reveal" href="{{ '/movement/arcade/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="balloon" %}</span>
-        <h3>Movement Arcade <span class="tag">Coming soon</span></h3>
-        <p>Fly a balloon with gentle nods, or pop bubbles with one finger.</p>
-        <span class="program-go">Take a look {% include fops/icon.html name="arrow" %}</span>
       </a>
     </div>
   </div>

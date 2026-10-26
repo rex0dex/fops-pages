@@ -19,7 +19,7 @@ hero: true
 <div class="wrap">
   <div class="stats">
     <div class="stat"><div class="stat-num" data-count="2">2</div><div class="stat-label">Bingo days every week</div></div>
-    <div class="stat"><div class="stat-num" data-count="4">4</div><div class="stat-label">games and practice tools online</div></div>
+    <div class="stat"><div class="stat-num" data-count="3">3</div><div class="stat-label">games you can play hands-free</div></div>
     <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-label">free to play, at any text size</div></div>
   </div>
 </div>
@@ -32,7 +32,7 @@ hero: true
     </div>
     <div class="reveal">
       <h2>What we do</h2>
-      <p>We host weekly Bingo and lunches, fund city senior programs, and now offer online games that help seniors stay sharp, move gently, and spot scams.</p>
+      <p>We host weekly Bingo and lunches, fund city senior programs, and now offer online games that help seniors stay sharp, stay social, and spot scams.</p>
     </div>
   </div>
 </section>
@@ -42,7 +42,7 @@ hero: true
     <div class="section-head reveal">
       <p class="kicker">Play &amp; Learn</p>
       <h2>Made for <em>every</em> hand and eye</h2>
-      <p>Big text, big buttons, and no time pressure. Sign in to keep your progress on any computer.</p>
+      <p>Big text, big buttons, no time pressure, and a hands-free mode for arthritis. Sign in to keep your progress on any computer.</p>
     </div>
     <div class="programs">
       <a class="program reveal" href="{{ '/scam-trainer/' | relative_url }}">
@@ -57,11 +57,11 @@ hero: true
         <p>Large-print cards and a caller that reads each number out loud. Play alone or with friends.</p>
         <span class="program-go">Play Bingo {% include fops/icon.html name="arrow" %}</span>
       </a>
-      <a class="program reveal" href="{{ '/movement/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="move" %}</span>
-        <h3>Movement Games</h3>
-        <p>Gentle seated exercises, counted by your webcam. Nothing leaves your computer.</p>
-        <span class="program-go">Start moving {% include fops/icon.html name="arrow" %}</span>
+      <a class="program reveal" href="{{ '/accessibility/' | relative_url }}">
+        <span class="program-icon">{% include fops/icon.html name="nod" %}</span>
+        <h3>Nod to select</h3>
+        <p>Arthritis or shaky hands? Play every game hands-free: a gentle nod presses the highlighted button.</p>
+        <span class="program-go">See how {% include fops/icon.html name="arrow" %}</span>
       </a>
       <a class="program reveal" href="{{ '/geography/' | relative_url }}">
         <span class="program-icon">{% include fops/icon.html name="globe" %}</span>

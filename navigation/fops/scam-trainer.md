@@ -10,11 +10,11 @@ kicker: "Practice"
 
 <section class="section" style="padding-top:1rem">
   <div class="wrap">
-    <div id="scam-game" class="game">
+    <div id="scam-game" class="game" data-nod-scope>
       <div class="game-bar">
         <p class="game-stat">Messages: <strong data-rounds>0</strong></p>
         <p class="game-stat">Scams caught: <strong data-caught>0</strong></p>
-        <button class="btn btn-ghost game-reset" type="button" data-reset>Start Over</button>
+        <button class="btn btn-ghost game-reset" type="button" data-reset data-nod-skip>Start Over</button>
       </div>
       <p class="game-weak" data-weak></p>
       <h2 class="game-prompt" data-prompt aria-live="polite">Loading…</h2>

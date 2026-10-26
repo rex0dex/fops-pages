@@ -138,8 +138,8 @@ export function recommend(a) {
     add('/bingo/play/', '🎱', 'Bingo', 'Large-print Bingo with a speaking caller.');
     add('/geography/', '🌍', 'Size It Up', 'Guess how big places really are, against a bot or a friend.');
   }
-  if (goals.includes('exercise') || (a.events || []).includes('exercise')) {
-    add('/movement/play/', '🙆', 'Movement Games', 'Seated exercises as games, using your webcam privately.');
+  if (a.comfort === 'starting') {
+    add('/accessibility/', '🙂', 'Nod to Select', 'Play every game hands-free: a gentle nod presses the highlighted button.');
   }
   if (goals.includes('events') || goals.includes('tech-help') || (a.events || []).length) {
     add('/events/', '📅', 'Upcoming Events', 'See what Friends of Poway Seniors has coming up.');
@@ -148,8 +148,8 @@ export function recommend(a) {
     add('/donate/', '🤝', 'Get Involved', 'Thank you! See how you can help Friends of Poway Seniors.');
   }
   if (!recs.length) add('/play/', '⭐', 'Play & Learn', 'Browse all our games and practice.');
-  // Easier games first for people who are just starting with technology.
-  if (a.comfort === 'starting') recs.sort((x, y) => (x.href === '/movement/play/') - (y.href === '/movement/play/'));
+  // Hands-free play first for people who are just starting with technology.
+  if (a.comfort === 'starting') recs.sort((x, y) => (y.href === '/accessibility/') - (x.href === '/accessibility/'));
   return recs;
 }
 

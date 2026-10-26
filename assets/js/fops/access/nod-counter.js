@@ -1,4 +1,4 @@
-// Turning face landmarks into counted head nods.
+// Turning face landmarks into counted head nods (used by Nod to select).
 // Pure functions only (no camera, no page), so the counting can be tested.
 
 // MediaPipe Face Landmarker points used to measure a nod.

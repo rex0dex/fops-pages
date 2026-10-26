@@ -39,7 +39,7 @@
   </div>
 
   {% assign path = page.url %}
-  {% assign play_paths = "/play/,/scam-trainer/,/bingo/,/bingo/play/,/movement/,/movement/play/,/movement/arcade/,/geography/" | split: "," %}
+  {% assign play_paths = "/play/,/scam-trainer/,/bingo/,/bingo/play/,/geography/,/accessibility/" | split: "," %}
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="{{ '/' | relative_url }}">
@@ -61,8 +61,8 @@
             <a href="{{ '/play/' | relative_url }}">All games<small>Everything in one place</small></a>
             <a href="{{ '/scam-trainer/' | relative_url }}">Spot the Scam<small>Practice the red flags</small></a>
             <a href="{{ '/bingo/play/' | relative_url }}">Bingo<small>Large print, speaking caller</small></a>
-            <a href="{{ '/movement/' | relative_url }}">Movement Games<small>Seated, webcam-scored</small></a>
             <a href="{{ '/geography/' | relative_url }}">Size It Up<small>How big is it really?</small></a>
+            <a href="{{ '/accessibility/' | relative_url }}">Easier ways to play<small>Nod to select, bigger text</small></a>
           </div>
         </div>
         <a href="{{ '/events/' | relative_url }}" {% if path == '/events/' %}aria-current="page"{% endif %}>Events</a>
@@ -73,6 +73,7 @@
           <button type="button" data-size="large" aria-pressed="false">A<span class="sr-only"> large text</span></button>
           <button type="button" data-size="xlarge" aria-pressed="false">A<span class="sr-only"> extra large text</span></button>
         </div>
+        <button class="nod-toggle" type="button" aria-pressed="false" data-nod-toggle title="Play hands-free: nod to press the highlighted button">{% include fops/icon.html name="nod" %}<span>Nod to select</span></button>
         <a class="btn btn-outline-donate" href="{{ '/donate/' | relative_url }}">Donate</a>
       </nav>
     </div>

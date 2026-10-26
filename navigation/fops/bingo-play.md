@@ -10,7 +10,7 @@ kicker: "Play online"
 
 <section class="section" style="padding-top:1rem">
   <div class="wrap">
-    <div id="bingo-app" class="game">
+    <div id="bingo-app" class="game" data-nod-scope data-nod-targets="[data-action], select">
 
       <!-- Start screen -->
       <div data-screen="lobby">
@@ -43,7 +43,7 @@ kicker: "Play online"
               <button class="btn btn-ghost" type="button" data-action="pause">Pause</button>
               <button class="btn btn-ghost" type="button" data-action="voice" aria-pressed="true">Voice: On</button>
               <button class="btn btn-ghost" type="button" data-action="automark" aria-pressed="true">Auto-mark: On</button>
-              <button class="btn btn-ghost" type="button" data-action="quit">End Game</button>
+              <button class="btn btn-ghost" type="button" data-action="quit" data-nod-skip>End Game</button>
             </div>
           </div>
           <div class="bingo-board">

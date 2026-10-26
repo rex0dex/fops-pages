@@ -34,9 +34,9 @@ lede: "Friends of Poway Seniors is a 501(c)(3) nonprofit supporting seniors and 
       <p>Made by Team Triple T, AP Computer Science Principles students at the Open Coding Society, building on the 2025–2026 site by Nitya, Vivian, and Virginia.</p>
     </div>
     <div class="team">
-      <div class="person reveal"><div class="person-initials">CT</div><h3>Chetan Tiduwar</h3><p>Spot the Scam trainer</p></div>
+      <div class="person reveal"><div class="person-initials">CT</div><h3>Chetan Tiduwar</h3><p>Nod to select, hands-free play</p></div>
       <div class="person reveal"><div class="person-initials">KT</div><h3>Kashyap Tubati</h3><p>Bingo, solo and multiplayer</p></div>
-      <div class="person reveal"><div class="person-initials">AP</div><h3>Aaditya Prem</h3><p>Movement games and accessibility</p></div>
+      <div class="person reveal"><div class="person-initials">AP</div><h3>Aaditya Prem</h3><p>Spot the Scam and site design</p></div>
     </div>
   </div>
 </section>
