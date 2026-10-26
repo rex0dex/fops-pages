@@ -1,17 +1,15 @@
 ---
-layout: fops
+layout: post
 title: Movement Arcade
-lede: Games you play by moving are being built here.
+description: Games you play by moving are being built here.
 permalink: /movement/arcade/
+toc: false
+comments: false
+show_reading_time: false
 ---
 
-<section class="section">
-  <div class="container">
-    <div class="callout">
-      <h2>Work in progress</h2>
-      <p>This part of the site is still being built. Please check back soon.</p>
-      <p><span class="status">In progress · Chetan Tiduwar, Aaditya Prem, and Kashyap Tubati</span></p>
-    </div>
-    <p style="margin-top:1.5rem"><a class="btn btn-outline btn-lg" href="{{ '/play/' | relative_url }}">Back to Play &amp; Learn</a></p>
-  </div>
-</section>
+> **Work in progress.** Games you play by moving are being built here. Please check back soon.
+
+In progress · Chetan Tiduwar, Aaditya Prem, and Kashyap Tubati
+
+<a class="ocs__btn" href="{{ site.baseurl }}/play/">Back to Play &amp; Learn</a>

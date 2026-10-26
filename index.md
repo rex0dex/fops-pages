@@ -1,101 +1,65 @@
 ---
-layout: fops
+layout: post
 title: Friends of Poway Seniors
-hide_title: true
+description: A volunteer-driven nonprofit supporting seniors and the Poway community.
+toc: false
+comments: false
+show_reading_time: false
+hide: true
 ---
 
-<section class="home-hero">
-  <div class="container">
-    <span class="eyebrow">Welcome</span>
-    <h1>Friends of Poway Seniors</h1>
-    <p class="lede">A volunteer-driven nonprofit supporting seniors and the Poway community through programs, resources, and connection.</p>
+> Friends of Poway Seniors is a volunteer-driven 501(c)(3) supporting seniors and the Poway community through programs, resources, and connection.
 
-    <h2 class="sr-only">What would you like to do?</h2>
-    <div class="choice-grid choice-grid--four">
-      <a class="choice" href="{{ '/events/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">📅</span>
-        <span class="choice-title">See Events</span>
-        <span class="choice-text">Bingo days, times, and lunch.</span>
-        <span class="choice-go">Go to Events →</span>
-      </a>
-      <a class="choice" href="{{ '/scam-trainer/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🛡️</span>
-        <span class="choice-title">Spot a Scam</span>
-        <span class="choice-text">Practice telling real messages from fake ones.</span>
-        <span class="choice-go">Start practicing →</span>
-      </a>
-      <a class="choice" href="{{ '/play/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🎱</span>
-        <span class="choice-title">Play a Game</span>
-        <span class="choice-text">Bingo and gentle seated movement games.</span>
-        <span class="choice-go">See the games →</span>
-      </a>
-      <a class="choice choice--donate" href="{{ '/donate/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">♥</span>
-        <span class="choice-title">Donate</span>
-        <span class="choice-text">Support senior programs in Poway.</span>
-        <span class="choice-go">Give today →</span>
-      </a>
-    </div>
-  </div>
-</section>
+<div class="ocs__grid ocs__grid--standard cols-2" style="margin-bottom: 1.5rem;">
+    <div class="ocs__grid-cell ocs__grid-cell--header">What would you like to do?</div>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Every Week</h2>
-      <p>At the Mickey Cafagna Community Center, Sycamore Hall. Doors open at 9:00 AM.</p>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>See Events</strong>
+        <p>Bingo days, times, and lunch at the Mickey Cafagna Community Center.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/events/">Go to Events</a>
     </div>
-    <div class="grid grid-2">
-      <article class="card event-card">
-        <div class="event-date"><span class="day">Tuesday</span><span class="when">Every week</span></div>
-        <div class="event-body">
-          <h3>Bingo and Lunch</h3>
-          <ul class="event-meta">
-            <li><strong>Card sales:</strong> 9:30 AM</li>
-            <li><strong>Game starts:</strong> 11:30 AM</li>
-            <li><strong>Lunch:</strong> pre-order by 1:00 PM Monday</li>
-          </ul>
-        </div>
-      </article>
-      <article class="card event-card">
-        <div class="event-date"><span class="day">Sunday</span><span class="when">Every week</span></div>
-        <div class="event-body">
-          <h3>Bingo</h3>
-          <ul class="event-meta">
-            <li><strong>Card sales:</strong> 10:30 AM</li>
-            <li><strong>Game starts:</strong> 12:30 PM</li>
-            <li><strong>Lunch:</strong> not served on Sundays</li>
-          </ul>
-        </div>
-      </article>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Spot a Scam</strong>
+        <p>Practice telling real messages from fake ones, before a real one shows up.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/scam-trainer/">Start Practicing</a>
     </div>
-    <p style="margin-top:1.25rem"><a class="btn btn-outline" href="{{ '/bingo/' | relative_url }}">Bingo prices and rules</a></p>
-  </div>
-</section>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Play a Game</strong>
+        <p>Large-print Bingo, Size It Up, and gentle seated movement games.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/play/">See the Games</a>
+    </div>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Donate</strong>
+        <p>Support senior programs in Poway.</p>
+        <a class="ocs__btn alert-red fill" href="{{ site.baseurl }}/donate/">Give Today</a>
+    </div>
+</div>
 
-<section class="section section-alt">
-  <div class="container">
-    <div class="grid grid-2">
-      <div>
-        <h2>Our Mission</h2>
-        <p>To support our seniors and marginalized communities by providing volunteer opportunities, access to material provisions, and monetary support for municipal-run senior programming and other community outreach programs.</p>
-      </div>
-      <div>
-        <h2>Our Vision</h2>
-        <p>For our seniors, and the community at large, to engage in, benefit from, and enjoy life to its fullest.</p>
-        <a class="btn btn-outline" href="{{ '/about/' | relative_url }}">About us</a>
-      </div>
-    </div>
-  </div>
-</section>
+## Every Week
 
-<section class="donate-band">
-  <div class="container inner">
-    <div>
-      <h2>Help keep senior programs going</h2>
-      <p>Your gift supports senior programming and community outreach in Poway.</p>
-    </div>
-    <a class="btn btn-donate btn-lg" href="{{ '/donate/' | relative_url }}">Donate</a>
-  </div>
-</section>
+At the Mickey Cafagna Community Center, Sycamore Hall. Doors open at 9:00 AM.
+
+<div style="overflow-x: auto;" markdown="1">
+
+| Day | Event | Card Sales | Game Starts | Lunch |
+|-----|-------|------------|-------------|-------|
+| Tuesday | Bingo and Lunch | 9:30 AM | 11:30 AM | Pre-order by 1:00 PM Monday |
+| Sunday | Bingo | 10:30 AM | 12:30 PM | Not served on Sundays |
+
+</div>
+
+<a class="ocs__btn" href="{{ site.baseurl }}/bingo/">Bingo Prices and Rules</a>
+
+## Our Mission
+
+To support our seniors and marginalized communities by providing volunteer opportunities, access to material provisions, and monetary support for municipal-run senior programming and other community outreach programs.
+
+## Our Vision
+
+For our seniors, and the community at large, to engage in, benefit from, and enjoy life to its fullest.
+
+<div class="ocs__links">
+    <a class="ocs__btn" href="{{ site.baseurl }}/about/">About Us</a>
+    <a class="ocs__btn" href="{{ site.baseurl }}/profile/">Your Profile</a>
+    <a class="ocs__btn alert-red fill" href="{{ site.baseurl }}/donate/">Donate</a>
+</div>

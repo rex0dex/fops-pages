@@ -1,43 +1,41 @@
 ---
-layout: fops
+layout: post
 title: Play & Learn
-lede: Games and practice made for Friends of Poway Seniors. Pick one to start.
+description: Games and practice made for Friends of Poway Seniors.
 permalink: /play/
+toc: false
+comments: false
+show_reading_time: false
 ---
 
-<section class="section">
-  <div class="container">
-    <div class="choice-grid">
-      <a class="choice" href="{{ '/scam-trainer/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🛡️</span>
-        <span class="choice-title">Spot the Scam</span>
-        <span class="choice-text">Learn the red flags in scam messages, one round at a time.</span>
-        <span class="choice-go">Start practicing →</span>
-      </a>
-      <a class="choice" href="{{ '/bingo/play/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🎱</span>
-        <span class="choice-title">Bingo</span>
-        <span class="choice-text">Large-print Bingo with a speaking caller. Play alone or with friends.</span>
-        <span class="choice-go">Play Bingo →</span>
-      </a>
-      <a class="choice" href="{{ '/movement/play/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🙆</span>
-        <span class="choice-title">Movement Games</span>
-        <span class="choice-text">Seated exercises as games, using your webcam privately.</span>
-        <span class="choice-go">Start moving →</span>
-      </a>
-      <a class="choice" href="{{ '/geography/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🌍</span>
-        <span class="choice-title">Size It Up</span>
-        <span class="choice-text">A geography game: make a place the right size next to another. Play a bot or a friend.</span>
-        <span class="choice-go">Play →</span>
-      </a>
-      <a class="choice" href="{{ '/movement/arcade/' | relative_url }}">
-        <span class="choice-icon" aria-hidden="true">🎈</span>
-        <span class="choice-title">Movement Arcade</span>
-        <span class="choice-text">Fly a balloon with gentle nods, or pop bubbles with your finger.</span>
-        <span class="choice-go">Play →</span>
-      </a>
+> Games and practice made for Friends of Poway Seniors. Pick one to start. Sign in to save your progress on any computer.
+
+<div class="ocs__grid ocs__grid--standard cols-2" style="margin-bottom: 1.5rem;">
+    <div class="ocs__grid-cell ocs__grid-cell--header">Games and Practice</div>
+
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Spot the Scam</strong>
+        <p>Learn the red flags in scam messages, one round at a time.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/scam-trainer/">Start Practicing</a>
     </div>
-  </div>
-</section>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Bingo</strong>
+        <p>Large-print Bingo with a speaking caller. Play alone or with friends.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/bingo/play/">Play Bingo</a>
+    </div>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Movement Games</strong>
+        <p>Seated exercises as games, using your webcam privately.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/movement/">Start Moving</a>
+    </div>
+    <div class="ocs__grid-cell ocs__grid-cell--accent">
+        <strong>Size It Up</strong>
+        <p>A geography game: make a place the right size next to another. Play a bot or a friend.</p>
+        <a class="ocs__btn alert-green fill" href="{{ site.baseurl }}/geography/">Play</a>
+    </div>
+    <div class="ocs__grid-cell">
+        <strong>Movement Arcade</strong>
+        <p>Fly a balloon with gentle nods, or pop bubbles with your finger.</p>
+        <a class="ocs__btn alert-yellow fill" href="{{ site.baseurl }}/movement/arcade/">In Progress</a>
+    </div>
+</div>
