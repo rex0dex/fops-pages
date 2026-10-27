@@ -280,3 +280,22 @@ $fops-font: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
   .nod-panel { left: 0.5rem; right: 0.5rem; width: auto; }
   .nod-panel video { display: none; }
 }
+
+// ---------- Centering, like other OCS capstone sites ----------
+// Headings, intros, buttons, and cards are centered; games and forms stay left-aligned.
+.fops-site section { text-align: center; }
+.fops-page-title p,
+.fops-section .fops-container > p { max-width: 46rem; margin-inline: auto; }
+.fops-site .ocs__links { justify-content: center; }
+.fops-card { align-items: center; text-align: center; }
+.fops-card .ocs__btn { align-self: center; }
+.fops-site .fops-table { text-align: left; }
+.fops-game,
+.fops-card:has(form),
+form.fops-card,
+#account { text-align: left; align-items: stretch; }
+.fops-game .ocs__links,
+.fops-card:has(form) .ocs__links { justify-content: flex-start; }
+.fops-card:has(form) .ocs__btn,
+#account .ocs__btn { align-self: flex-start; }
+.bingo-caller { text-align: center; }
