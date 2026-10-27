@@ -1,0 +1,282 @@
+// Friends of Poway Seniors pages (layout: opencs, custom_header: true).
+// Pages are built from OCS buttons and grids. This file re-points the OCS theme
+// variables to our colors, lays out the full-width page sections, and sizes the
+// game pieces. Everything is scoped under .fops-site.
+@import "mixins/buttons";
+
+$fops-paper: #fbf8f2;
+$fops-ink: #23302b;
+$fops-muted: #5f6b65;
+$fops-sage: #3f6b57;
+$fops-sage-tint: #e6efe9;
+$fops-honey: #d9a54a;
+$fops-honey-tint: #f8eed9;
+$fops-clay: #b5573b;
+$fops-night: #1f2a25;
+$fops-line: #e4ddd0;
+$fops-font: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+
+// The OCS user theme forces text colors with !important from --pref-text-color,
+// so set that variable alongside color instead of fighting it.
+@mixin fops-text-color($color) {
+  color: $color;
+  --pref-text-color: #{$color};
+}
+
+// The template wraps content in a narrow column; break out so sections span the window.
+.page-content:has(.fops-site) {
+  padding-top: 0;
+  overflow-x: clip;
+}
+
+.fops-site {
+  // OCS theme variables, re-pointed to our palette.
+  --pref-bg-color: #{$fops-paper};
+  --pref-accent-color: #{$fops-sage};
+  --pref-font-family: #{$fops-font};
+  --panel: #fff;
+  --panel-mid: #{$fops-sage-tint};
+  --ui-border: #{$fops-line};
+  --text-muted: #{$fops-muted};
+  --red: #{$fops-clay};
+  --green: #{$fops-sage};
+  --warn: #{$fops-honey};
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: $fops-paper;
+  @include fops-text-color($fops-ink);
+  font-family: $fops-font;
+  font-size: var(--fops-size, 20px);
+  line-height: 1.6;
+
+  // The template hides h1 and left-aligns headings; undo that here.
+  h1, h2, h3 {
+    display: block;
+    text-align: inherit;
+    text-shadow: none;
+    font-family: $fops-font;
+    font-weight: 700;
+    @include fops-text-color($fops-ink);
+    margin: 0 0 0.5em;
+    line-height: 1.2;
+  }
+  h1 { font-size: 2.4em; }
+  h2 { font-size: 1.7em; }
+  h3 { font-size: 1.2em; }
+  p { margin-top: 0; margin-bottom: 1em; }
+  a { color: $fops-sage; }
+
+  // OCS buttons, sized for older hands and solid when "fill".
+  // OCS "fill" becomes a solid tone with white text, like OCS capstone sites do.
+  .ocs__btn { font-family: $fops-font; font-weight: 700; text-decoration: none; }
+  .ocs__btn.fill,
+  .ocs__btn.fill:hover,
+  .ocs__btn.fill:focus {
+    background: var(--ocs-btn-tone);
+    border-color: var(--ocs-btn-tone);
+    color: #fff !important;
+  }
+  .ocs__btn.fill:hover { filter: brightness(0.92); }
+  .ocs__btn.accent:not(.fill) { background: #fff; color: $fops-sage !important; }
+  .ocs__links { justify-content: inherit; }
+
+  .hint { color: $fops-muted; }
+}
+
+.fops-container { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+// ---------- Header ----------
+.fops-ocs-strip {
+  background: $fops-night; font-size: 0.8em;
+  .fops-container { display: flex; align-items: center; gap: 1rem; min-height: 2.3rem; flex-wrap: wrap; }
+  a { color: #e6ece8 !important; text-decoration: none; }
+  img { height: 1.2rem; display: block; }
+  nav { margin-left: auto; display: flex; gap: 1rem; }
+}
+.fops-header {
+  background: #fff; border-bottom: 1px solid $fops-line;
+  .fops-container { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; padding: 0.8rem 0; }
+}
+.fops-logo {
+  display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
+  .fops-logo__mark { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: $fops-sage; position: relative; flex: none; }
+  .fops-logo__mark::after { content: ""; position: absolute; inset: 0.65rem; border-radius: 50%; background: $fops-honey; }
+  .fops-logo__name { font-weight: 700; font-size: 1.1em; @include fops-text-color($fops-ink); line-height: 1.1; }
+  .fops-logo__tag { display: block; font-size: 0.7em; @include fops-text-color($fops-honey); font-weight: 700; }
+}
+.fops-nav {
+  display: flex; flex-wrap: wrap; gap: 0.2rem 1rem;
+  a { @include fops-text-color($fops-ink); text-decoration: none; font-weight: 700; }
+  a:hover, a[aria-current="page"] { @include fops-text-color($fops-sage); text-decoration: underline; text-underline-offset: 6px; }
+}
+.fops-header__actions { margin-left: auto; }
+
+// Accessibility row: text size and Nod to select
+.fops-access {
+  background: $fops-sage-tint;
+  .fops-container { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; padding: 0.45rem 0; }
+  .ocs__btn { margin: 0; }
+  [data-size="large"] { font-size: 1.1em; }
+  [data-size="xlarge"] { font-size: 1.25em; }
+  [aria-pressed="true"] { background: $fops-sage !important; color: #fff !important; }
+  [data-nod-toggle] { margin-left: auto; }
+}
+
+// ---------- Sections ----------
+.fops-hero {
+  background: linear-gradient(135deg, $fops-sage 0%, $fops-night 100%);
+  text-align: center; padding: 4.5rem 0 4rem;
+  h1 { @include fops-text-color(#fff); }
+  p { @include fops-text-color(#f1ede3); font-size: 1.15em; max-width: 40rem; margin-inline: auto; }
+  .ocs__links { justify-content: center; margin-top: 1.5rem; }
+  .ocs__btn.accent:not(.fill) { background: transparent; color: #fff !important; border-color: #fff; }
+}
+.fops-page-title {
+  background: $fops-sage-tint; padding: 2.5rem 0 2rem;
+  p { color: $fops-muted; max-width: 42rem; margin: 0; }
+}
+.fops-section { padding: 3rem 0; }
+.fops-section--sage { background: $fops-sage; text-align: center;
+  h2, p { @include fops-text-color(#fff); }
+}
+.fops-section--honey { background: $fops-honey-tint; }
+.fops-section__intro { color: $fops-muted; margin-bottom: 1.5rem; }
+
+// Simple bordered cards, like the OCS grid cells
+.fops-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+.fops-card {
+  background: #fff; border: 1px solid $fops-line; border-radius: 12px; padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  h3 { margin: 0; }
+  p { margin: 0; color: $fops-muted; flex: 1; }
+  .ocs__btn { align-self: flex-start; }
+}
+.fops-card--tint { background: $fops-sage-tint; border-color: transparent; }
+
+// OCS tables are dark and striped; ours are plain and light for easy reading.
+.fops-site .fops-table {
+  width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; border: 1px solid $fops-line;
+  font-family: $fops-font; font-size: 1em;
+  tr, td, th { background: #fff !important; @include fops-text-color($fops-ink); font-family: $fops-font; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border: 0; border-bottom: 1px solid $fops-line; }
+  th { background: $fops-sage-tint !important; font-weight: 700; }
+}
+.fops-list { padding-left: 1.2rem; li { margin-bottom: 0.4rem; } }
+
+// ---------- Footer ----------
+.fops-footer {
+  background: $fops-night; padding: 2rem 0; font-size: 0.85em; text-align: center;
+  p { @include fops-text-color(#c9d1cc); margin: 0 0 0.3rem; }
+  a { color: $fops-honey !important; }
+}
+
+// ---------- Forms ----------
+.fops-field { margin-bottom: 1rem;
+  label { display: block; font-weight: 700; margin-bottom: 0.3rem; }
+  input { width: 100%; max-width: 24rem; font: inherit; padding: 0.6rem 0.8rem; border: 1px solid $fops-line; border-radius: 8px; background: #fff; color: $fops-ink; }
+}
+.form-message.ok { color: $fops-sage; font-weight: 700; }
+.form-message.error { color: $fops-clay; font-weight: 700; }
+.fops-site [role="tab"][aria-selected="true"] { background: $fops-sage !important; color: #fff !important; }
+
+// ---------- Games ----------
+.fops-game { background: #fff; border: 1px solid $fops-line; border-radius: 12px; padding: 1.25rem; scroll-margin-top: 1rem; }
+.game-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid $fops-line; }
+.game-stat { margin: 0 !important; }
+.game-reset { margin-left: auto; }
+.game-weak { color: $fops-muted; margin: 0.75rem 0 0 !important; }
+.game-prompt { margin: 1rem 0 0.75rem !important; }
+.game-feedback { margin-top: 1rem; display: grid; gap: 0.75rem; justify-items: start; }
+.game-options { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1rem; }
+.game-options select { @include base-button; min-height: 2.75rem; padding: 0.3rem 0.6rem; border-radius: 8px; }
+.result { font-weight: 700; margin: 0; }
+.result.ok { color: $fops-sage; }
+.result.bad { color: $fops-clay; }
+.result.hint { color: #8a6420; }
+.lesson-kicker { font-weight: 700; color: $fops-muted; margin-bottom: 0.25rem; }
+
+// Spot the Scam
+.msg-pair { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.msg-col { display: flex; flex-direction: column; gap: 0.75rem; }
+.msg-card { flex: 1; background: $fops-paper; border: 2px solid $fops-line; border-radius: 12px; padding: 1rem; }
+.msg-card.is-real { border-color: $fops-sage; }
+.msg-card.is-scam { border-color: $fops-clay; }
+.msg-label { font-weight: 700; margin: 0 !important; color: $fops-sage; }
+.msg-channel { color: $fops-muted; font-size: 0.85em; margin: 0 0 0.5rem !important; }
+.msg-from { margin: 0 0 0.5rem !important; overflow-wrap: anywhere; }
+.msg-body { line-height: 1.8; margin: 0 !important; }
+.msg-part-btn { display: inline; padding: 0 0.15rem; margin: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; background: $fops-honey-tint; border: 0; border-bottom: 2px dashed $fops-honey; }
+.msg-part-btn:disabled { cursor: default; }
+.msg-part-btn.is-wrong { background: transparent; border-bottom-color: transparent; text-decoration: line-through; }
+.msg-part-btn.is-flag { background: #f4e1d9; border-bottom: 2px solid $fops-clay; color: $fops-clay; font-weight: 700; }
+.msg-part-btn:not(.is-flag):not(.is-wrong):disabled { background: transparent; border-bottom-color: transparent; }
+.msg-verdict { font-weight: 700; margin: 0.75rem 0 0 !important; }
+.msg-verdict.ok { color: $fops-sage; }
+.msg-verdict.bad { color: $fops-clay; }
+
+// Bingo
+.bingo-layout { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); align-items: start; }
+.bingo-caller { text-align: center; }
+.ball { width: 8rem; height: 8rem; margin: 0.5rem auto; border-radius: 50%; display: grid; place-items: center; border: 5px solid $fops-sage; background: $fops-honey-tint; font-size: 2em; font-weight: 700; }
+.ball-count { font-weight: 700; color: $fops-muted; }
+.recent { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+.recent li { background: $fops-sage-tint; border-radius: 999px; padding: 0.1rem 0.6rem; font-weight: 700; }
+.bingo-controls { display: grid; gap: 0.25rem; }
+.bingo-board { display: grid; gap: 0.75rem; }
+.bingo-card { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.35rem; }
+.bingo-head { text-align: center; font-weight: 700; font-size: 1.5em; color: #fff; background: $fops-sage; border-radius: 8px; }
+.bingo-cell { @include base-button; aspect-ratio: 1; min-height: 3rem; display: grid; place-items: center; border-radius: 8px; font-size: 1.4em; font-weight: 700; background: #fff; color: $fops-ink; }
+.bingo-cell.is-marked { background: $fops-sage-tint; border: 2px solid $fops-sage; color: $fops-sage; }
+.bingo-cell.is-free { font-size: 0.8em; cursor: default; }
+.bingo-cell.is-win { background: $fops-honey-tint; border-color: $fops-honey; }
+.bingo-call { width: 100%; }
+
+// Size It Up
+.geo-board { display: block; width: 100%; height: auto; margin: 0.5rem auto; border: 1px solid $fops-line; border-radius: 12px; background: $fops-paper; touch-action: none; }
+.geo-floor { stroke: $fops-line; stroke-width: 3; }
+.geo-ref { fill: $fops-muted; }
+.geo-target { fill: $fops-clay; }
+.geo-actual { fill: $fops-sage; }
+.geo-guess-a { fill: #3c6e9e; }
+.geo-guess-b { fill: $fops-clay; }
+.geo-label { font: 700 22px $fops-font; fill: $fops-ink; text-anchor: middle; }
+.geo-label--target { fill: $fops-clay; }
+.geo-sub { font: 15px $fops-font; fill: $fops-muted; text-anchor: middle; }
+.geo-handle { cursor: nwse-resize; }
+.geo-handle rect { fill: $fops-clay; stroke: #fff; stroke-width: 3; }
+.geo-handle text { font: 700 26px $fops-font; fill: #fff; text-anchor: middle; pointer-events: none; }
+.geo-controls { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+.geo-timer { margin-left: auto; font-weight: 700; color: $fops-clay; }
+
+// Profile survey
+.survey-question { border: 0; padding: 0; margin: 0 0 1.25rem; }
+.survey-question legend { font-weight: 700; margin-bottom: 0.3rem; }
+.survey-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.survey-option { @include base-button; min-height: 2.75rem; padding: 0.4rem 0.9rem; border-radius: 999px; background: #fff; color: $fops-ink; }
+.survey-option[aria-pressed="true"] { background: $fops-sage; border-color: $fops-sage; color: #fff; }
+
+// Nod to select: the camera panel and the highlighted control
+.nod-panel {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 80; width: 14.5rem;
+  background: #fff; color: $fops-ink; border: 1px solid $fops-line; border-radius: 12px; padding: 0.8rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2); font-family: $fops-font; font-size: 15px;
+}
+.nod-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; white-space: nowrap; }
+.nod-off { @include base-button; border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.85em; }
+.nod-panel video { display: block; width: 100%; height: 5.5rem; object-fit: cover; border-radius: 8px; transform: scaleX(-1); background: #000; }
+.nod-meter { height: 0.45rem; background: $fops-sage-tint; border-radius: 999px; overflow: hidden; margin: 0.5rem 0; }
+.nod-meter div { height: 100%; width: 0; background: $fops-sage; }
+.nod-status { margin: 0 0 0.5rem; font-weight: 700; min-height: 2.6em; line-height: 1.35; }
+.nod-speed { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; color: $fops-muted; }
+.nod-speed select { @include base-button; border-radius: 8px; padding: 0.15rem 0.4rem; }
+.nod-target { outline: 5px solid $fops-honey !important; outline-offset: 4px; position: relative; z-index: 2; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 760px) {
+  .bingo-layout { grid-template-columns: 1fr; }
+  .fops-header__actions { margin-left: 0; }
+  .fops-ocs-strip nav { margin-left: 0; }
+  .nod-panel { left: 0.5rem; right: 0.5rem; width: auto; }
+  .nod-panel video { display: none; }
+}

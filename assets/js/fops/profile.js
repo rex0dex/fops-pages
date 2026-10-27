@@ -3,6 +3,7 @@
 // also saved to their account on the fops-flask backend (/api/fops/profile/interests),
 // which uses them, added up without names, to help volunteers plan events.
 import { pythonURI, fetchOptions, baseurl } from '../api/config.js';
+import { currentMember } from './account.js';
 
 const SITE = baseurl;
 const LOCAL_KEY = 'fops-interests';
@@ -155,15 +156,15 @@ export function recommend(a) {
 
 function showRecommendations() {
   const recs = recommend(answers);
-  // Each recommendation is a program card, like the ones on the Play & Learn page.
+  // Each recommendation is a card with an OCS button, like the Play & Learn page.
   recBox.replaceChildren(...recs.map((r) => {
-    const link = document.createElement('a');
-    link.className = 'program';
-    link.href = SITE + r.href;
-    link.innerHTML = '<h3></h3><p></p><span class="program-go">Go</span>';
-    link.querySelector('h3').textContent = r.title;
-    link.querySelector('p').textContent = r.text;
-    return link;
+    const card = document.createElement('div');
+    card.className = 'fops-card';
+    card.innerHTML = '<h3></h3><p></p><a class="ocs__btn medium accent fill">Go</a>';
+    card.querySelector('h3').textContent = r.title;
+    card.querySelector('p').textContent = r.text;
+    card.querySelector('a').href = SITE + r.href;
+    return card;
   }));
   results.hidden = false;
 }
@@ -171,9 +172,8 @@ function showRecommendations() {
 async function load() {
   answers = readLocal();
   try {
-    const me = await fetch(`${pythonURI}/api/id`, fetchOptions);
-    if (me.ok) {
-      const user = await me.json();
+    const user = await currentMember();
+    if (user) {
       signedIn = true;
       statusText.textContent = `Signed in as ${user.name}. Your answers are saved to your account.`;
       const response = await fetch(`${pythonURI}/api/fops/profile/interests`, fetchOptions);

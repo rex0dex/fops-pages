@@ -1,109 +1,82 @@
 ---
-layout: fops
-title: "Friends of Poway Seniors"
-hero: true
+layout: opencs
+title: Friends of Poway Seniors
+description: "Helping Poway seniors stay connected, sharp, and safe."
+custom_header: true
+hide: true
 ---
+<!-- markdownlint-disable MD033 -->
+<div class="fops-site">
 
-<section class="hero">
-  <canvas data-hero-canvas aria-hidden="true"></canvas>
-  <div class="wrap">
-    <h1>Play, learn &amp; <em>belong</em></h1>
-    <p class="hero-lede">Friends of Poway Seniors is a volunteer-run nonprofit keeping Poway's seniors connected, sharp, and safe, at the community center and online.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary btn-lg" href="{{ '/play/' | relative_url }}">See what we do</a>
-      <a class="btn btn-link btn-lg" href="{{ '/events/' | relative_url }}">This week's events {% include fops/icon.html name="arrow" %}</a>
+{% include fops/header.html %}
+
+<section class="fops-hero">
+    <div class="fops-container">
+        <h1>Stay connected, sharp, and safe.</h1>
+        <p>Friends of Poway Seniors is a volunteer-run nonprofit supporting seniors and the Poway community through programs, resources, and connection.</p>
+        <div class="ocs__links">
+            <a class="ocs__btn large accent fill" href="{{ '/play/' | relative_url }}">Play &amp; Learn</a>
+            <a class="ocs__btn large accent" href="{{ '/events/' | relative_url }}">This Week's Events</a>
+            <a class="ocs__btn large alert-red fill" href="{{ '/donate/' | relative_url }}">Donate</a>
+        </div>
     </div>
-  </div>
 </section>
 
-<div class="wrap">
-  <div class="stats">
-    <div class="stat"><div class="stat-num" data-count="2">2</div><div class="stat-label">Bingo days every week</div></div>
-    <div class="stat"><div class="stat-num" data-count="3">3</div><div class="stat-label">games you can play hands-free</div></div>
-    <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-label">free to play, at any text size</div></div>
-  </div>
+<section class="fops-section fops-section--sage">
+    <div class="fops-container">
+        <h2>What Do We Do?</h2>
+        <p>We host weekly Bingo and lunches, fund city senior programs, and offer online games that help seniors stay sharp, stay social, and spot scams.</p>
+    </div>
+</section>
+<section class="fops-section">
+    <div class="fops-container">
+        <h2>Play &amp; Learn</h2>
+        <p class="fops-section__intro">Big text, big buttons, no time pressure, and a hands-free mode for arthritis.</p>
+        <div class="fops-cards">
+            <div class="fops-card">
+                <h3>Spot the Scam</h3>
+                <p>Two messages side by side. Pick the one you trust, then tap the red flag.</p>
+                <a class="ocs__btn medium accent fill" href="{{ '/scam-trainer/' | relative_url }}">Start Practicing</a>
+            </div>
+            <div class="fops-card">
+                <h3>Bingo</h3>
+                <p>Large-print cards and a caller that reads each number out loud.</p>
+                <a class="ocs__btn medium accent fill" href="{{ '/bingo/play/' | relative_url }}">Play Bingo</a>
+            </div>
+            <div class="fops-card">
+                <h3>Size It Up</h3>
+                <p>How big is Texas next to France? Resize places from real maps.</p>
+                <a class="ocs__btn medium accent fill" href="{{ '/geography/' | relative_url }}">Play</a>
+            </div>
+            <div class="fops-card">
+                <h3>Nod to Select</h3>
+                <p>Arthritis or shaky hands? Play every game with a gentle nod instead of a mouse.</p>
+                <a class="ocs__btn medium accent fill" href="{{ '/accessibility/' | relative_url }}">See How</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="fops-section fops-section--honey">
+    <div class="fops-container">
+        <h2>Every Week at Sycamore Hall</h2>
+        <p class="fops-section__intro">Mickey Cafagna Community Center. Doors open at 9:00 AM.</p>
+        <table class="fops-table">
+            <tr><th>Day</th><th>Event</th><th>Card sales</th><th>Game starts</th><th>Lunch</th></tr>
+            <tr><td>Tuesday</td><td>Bingo and Lunch</td><td>9:30 AM</td><td>11:30 AM</td><td>Pre-order by 1:00 PM Monday</td></tr>
+            <tr><td>Sunday</td><td>Bingo</td><td>10:30 AM</td><td>12:30 PM</td><td>Not served on Sundays</td></tr>
+        </table>
+        <div class="ocs__links" style="margin-top:1rem"><a class="ocs__btn medium accent" href="{{ '/bingo/' | relative_url }}">Bingo Prices and Rules</a></div>
+    </div>
+</section>
+<section class="fops-section">
+    <div class="fops-container">
+        <div class="fops-cards">
+            <div class="fops-card fops-card--tint"><h3>Our Mission</h3><p>To support our seniors and marginalized communities by providing volunteer opportunities, access to material provisions, and monetary support for municipal-run senior programming and other community outreach programs.</p></div>
+            <div class="fops-card fops-card--tint"><h3>Our Vision</h3><p>For our seniors, and the community at large, to engage in, benefit from, and enjoy life to its fullest.</p></div>
+        </div>
+    </div>
+</section>
+
+{% include fops/footer.html %}
+
 </div>
-
-<section class="section">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <h2>Who we are</h2>
-      <p>A volunteer-run 501(c)(3) based at the Mickey Cafagna Community Center, raising support for senior programs and outreach in Poway.</p>
-    </div>
-    <div class="reveal">
-      <h2>What we do</h2>
-      <p>We host weekly Bingo and lunches, fund city senior programs, and now offer online games that help seniors stay sharp, stay social, and spot scams.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-tint">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker">Play &amp; Learn</p>
-      <h2>Made for <em>every</em> hand and eye</h2>
-      <p>Big text, big buttons, no time pressure, and a hands-free mode for arthritis. Sign in to keep your progress on any computer.</p>
-    </div>
-    <div class="programs">
-      <a class="program reveal" href="{{ '/scam-trainer/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="shield" %}</span>
-        <h3>Spot the Scam</h3>
-        <p>Two messages side by side. Decide which one to trust, then tap the red flag.</p>
-        <span class="program-go">Start practicing {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program reveal" href="{{ '/bingo/play/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="bingo" %}</span>
-        <h3>Bingo</h3>
-        <p>Large-print cards and a caller that reads each number out loud. Play alone or with friends.</p>
-        <span class="program-go">Play Bingo {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program reveal" href="{{ '/accessibility/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="nod" %}</span>
-        <h3>Nod to select</h3>
-        <p>Arthritis or shaky hands? Play every game hands-free: a gentle nod presses the highlighted button.</p>
-        <span class="program-go">See how {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program reveal" href="{{ '/geography/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="globe" %}</span>
-        <h3>Size It Up</h3>
-        <p>How big is Texas next to France? Resize places from real maps against a bot or a friend.</p>
-        <span class="program-go">Play {% include fops/icon.html name="arrow" %}</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker">Every week</p>
-      <h2>Bingo at Sycamore Hall</h2>
-      <p>Doors open at 9:00 AM. Up to two adjacent seats may be reserved per player.</p>
-    </div>
-    <div class="schedule">
-      <div class="slot reveal">
-        <div class="slot-day">Tuesday<small>Every week</small></div>
-        <div><h3>Bingo &amp; Lunch</h3><p>Lunch is served. Pre-order by 1:00 PM on Monday.</p></div>
-        <div class="slot-times">Cards <strong>9:30 AM</strong><br>Game <strong>11:30 AM</strong></div>
-      </div>
-      <div class="slot reveal">
-        <div class="slot-day">Sunday<small>Every week</small></div>
-        <div><h3>Bingo</h3><p>No lunch on Sundays. Snacks and free coffee.</p></div>
-        <div class="slot-times">Cards <strong>10:30 AM</strong><br>Game <strong>12:30 PM</strong></div>
-      </div>
-    </div>
-    <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="{{ '/bingo/' | relative_url }}">Prices and rules</a></p>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="cta reveal">
-      <div>
-        <h2>Got a message that felt <em>off</em>?</h2>
-        <p>Scammers target seniors most. Practice spotting the warning signs before the next one shows up.</p>
-      </div>
-      <a class="btn btn-primary btn-lg" href="{{ '/scam-trainer/' | relative_url }}">Practice now</a>
-    </div>
-  </div>
-</section>

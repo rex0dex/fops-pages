@@ -1,5 +1,6 @@
 // Sign in, create an account, and sign out against the fops-flask backend.
-import { pythonURI, fetchOptions } from '../api/config.js';
+import { pythonURI, fetchOptions, baseurl } from '../api/config.js';
+import { currentMember } from './account.js';
 
 const account = document.getElementById('account');
 const forms = document.getElementById('auth-forms');
@@ -33,17 +34,13 @@ async function readMessage(response, fallback) {
 }
 
 async function showAccount() {
-  try {
-    const response = await fetch(`${pythonURI}/api/id`, fetchOptions);
-    if (!response.ok) return false;
-    const user = await response.json();
-    account.querySelector('[data-account-name]').textContent = user.name;
-    account.hidden = false;
-    forms.hidden = true;
-    return true;
-  } catch (e) {
-    return false;
-  }
+  const member = await currentMember();
+  if (!member) return false;
+  account.querySelector('[data-account-name]').textContent = member.name;
+  account.querySelector('[data-account-pending]').hidden = member.active;
+  account.hidden = false;
+  forms.hidden = true;
+  return true;
 }
 
 async function signIn(uid, password) {
@@ -104,7 +101,8 @@ panels.create.addEventListener('submit', async (event) => {
       showTab('signin');
       return;
     }
-    await showAccount();
+    // New members go straight to their profile to answer the interest survey.
+    window.location.href = `${baseurl}/profile/`;
   } catch (e) {
     say(form, 'We could not reach the server. Please try again in a moment.', 'error');
   }

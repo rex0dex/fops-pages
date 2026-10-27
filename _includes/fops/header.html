@@ -1,0 +1,45 @@
+{%- comment -%}
+  Header for Friends of Poway Seniors pages (layout: opencs, custom_header: true).
+  Thin OCS strip, our own nav, then the accessibility row. Styles: _sass/open-coding/fops-site.scss.
+  Loads assets/js/fops/site.js (text size, Nod to select, sign-in name).
+{%- endcomment -%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+{%- assign path = page.url -%}
+<div class="fops-ocs-strip">
+  <div class="fops-container">
+    <a href="https://pages.opencodingsociety.com/" aria-label="Open Coding Society"><img src="{{ '/images/logo.png' | relative_url }}" alt=""></a>
+    <a href="https://pages.opencodingsociety.com/">Open Coding Society capstone</a>
+    <nav aria-label="Open Coding Society">
+      <a href="https://pages.opencodingsociety.com/capstone/fops-2026-2027/">Capstone</a>
+      <a href="{{ '/board/' | relative_url }}">Project Board</a>
+    </nav>
+  </div>
+</div>
+<header class="fops-header">
+  <div class="fops-container">
+    <a class="fops-logo" href="{{ '/' | relative_url }}">
+      <span class="fops-logo__mark" aria-hidden="true"></span>
+      <span><span class="fops-logo__name">Friends of Poway Seniors</span><span class="fops-logo__tag">Poway, California</span></span>
+    </a>
+    <nav class="fops-nav" aria-label="Main">
+      <a href="{{ '/events/' | relative_url }}" {% if path == '/events/' %}aria-current="page"{% endif %}>Events</a>
+      <a href="{{ '/play/' | relative_url }}" {% if path == '/play/' %}aria-current="page"{% endif %}>Play &amp; Learn</a>
+      <a href="{{ '/accessibility/' | relative_url }}" {% if path == '/accessibility/' %}aria-current="page"{% endif %}>Easier Play</a>
+      <a href="{{ '/about/' | relative_url }}" {% if path == '/about/' %}aria-current="page"{% endif %}>About</a>
+    </nav>
+    <div class="ocs__links fops-header__actions">
+      <a class="ocs__btn medium accent" href="{{ '/signin/' | relative_url }}" data-auth-link>Login</a>
+      <a class="ocs__btn medium accent fill" href="{{ '/donate/' | relative_url }}">Donate</a>
+    </div>
+  </div>
+</header>
+<div class="fops-access" role="group" aria-label="Accessibility">
+  <div class="fops-container">
+    <span>Text size</span>
+    <button class="ocs__btn small" type="button" data-size="normal" aria-pressed="true">A<span class="sr-only"> normal</span></button>
+    <button class="ocs__btn small" type="button" data-size="large" aria-pressed="false">A<span class="sr-only"> large</span></button>
+    <button class="ocs__btn small" type="button" data-size="xlarge" aria-pressed="false">A<span class="sr-only"> extra large</span></button>
+    <button class="ocs__btn small accent" type="button" data-nod-toggle aria-pressed="false" title="Play hands-free: nod to press the highlighted button">Nod to select</button>
+  </div>
+</div>
+<script type="module" src="{{ '/assets/js/fops/site.js' | relative_url }}"></script>

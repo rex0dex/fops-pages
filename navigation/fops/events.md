@@ -1,34 +1,42 @@
 ---
-layout: fops
-title: "Events"
+layout: opencs
+title: Events
+description: "Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway."
 permalink: /events/
-kicker: "Events"
-heading: "What's <em>happening</em>"
-lede: "Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway. Bingo is in Sycamore Hall; doors open at 9:00 AM."
+custom_header: true
+hide: true
 ---
+<!-- markdownlint-disable MD033 -->
+<div class="fops-site">
 
-<section class="section" style="padding-top:1rem">
-  <div class="wrap">
-    <div class="schedule">
-      <div class="slot reveal">
-        <div class="slot-day">Tuesday<small>Every week</small></div>
-        <div><h3>Bingo &amp; Lunch</h3><p>Lunch is served. Pre-order by 1:00 PM on Monday.</p></div>
-        <div class="slot-times">Cards <strong>9:30 AM</strong><br>Game <strong>11:30 AM</strong></div>
-      </div>
-      <div class="slot reveal">
-        <div class="slot-day">Sunday<small>Every week</small></div>
-        <div><h3>Bingo</h3><p>No lunch on Sundays. Snacks and free coffee.</p></div>
-        <div class="slot-times">Cards <strong>10:30 AM</strong><br>Game <strong>12:30 PM</strong></div>
-      </div>
+{% include fops/header.html %}
+
+<section class="fops-page-title">
+    <div class="fops-container">
+        <h1>Events</h1>
+        <p>Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway.</p>
     </div>
-    <p style="margin-top:1.5rem"><a class="btn btn-primary" href="{{ '/bingo/' | relative_url }}">Bingo prices and rules</a></p>
-  </div>
 </section>
 
-<section class="section section-tint">
-  <div class="wrap">
-    <div class="note reveal">
-      <p><strong>More events coming.</strong> The Social Lunch, the ReRuns Shoppe, and other events will be listed here with their real dates as we confirm them with Friends of Poway Seniors.</p>
+<section class="fops-section">
+    <div class="fops-container">
+        <h2>Every Week</h2>
+        <p class="fops-section__intro">Bingo is in Sycamore Hall. Doors open at 9:00 AM.</p>
+        <table class="fops-table">
+            <tr><th>Day</th><th>Event</th><th>Card sales</th><th>Game starts</th><th>Lunch</th></tr>
+            <tr><td>Tuesday</td><td>Bingo and Lunch</td><td>9:30 AM</td><td>11:30 AM</td><td>Pre-order by 1:00 PM Monday</td></tr>
+            <tr><td>Sunday</td><td>Bingo</td><td>10:30 AM</td><td>12:30 PM</td><td>Not served on Sundays</td></tr>
+        </table>
+        <div class="ocs__links" style="margin-top:1rem"><a class="ocs__btn medium accent fill" href="{{ '/bingo/' | relative_url }}">Bingo Prices and Rules</a></div>
     </div>
-  </div>
 </section>
+<section class="fops-section fops-section--honey">
+    <div class="fops-container">
+        <h2>More Events Coming</h2>
+        <p>The Social Lunch, the ReRuns Shoppe, and other events will be listed here with their real dates as we confirm them with Friends of Poway Seniors.</p>
+    </div>
+</section>
+
+{% include fops/footer.html %}
+
+</div>

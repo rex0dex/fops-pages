@@ -71,7 +71,7 @@ function newRound(moveFocus = true) {
     const card = messageCard(current[which], `Message ${i === 0 ? 'A' : 'B'}`, current.channel);
     card.dataset.which = which;
     wrap.appendChild(card);
-    const choose = el('button', 'btn btn-primary btn-lg msg-choose', `I trust Message ${i === 0 ? 'A' : 'B'}`);
+    const choose = el('button', 'ocs__btn large accent fill msg-choose', `I trust Message ${i === 0 ? 'A' : 'B'}`);
     choose.type = 'button';
     choose.addEventListener('click', () => chooseTrusted(which));
     wrap.appendChild(choose);
@@ -149,7 +149,7 @@ function finishRound(foundFlag) {
   feedback.appendChild(box);
 
   setPrompt('The highlighted parts are the red flags.');
-  const next = el('button', 'btn btn-primary btn-lg', 'Next Message');
+  const next = el('button', 'ocs__btn large accent fill', 'Next Message');
   next.type = 'button';
   next.addEventListener('click', newRound);
   feedback.appendChild(next);

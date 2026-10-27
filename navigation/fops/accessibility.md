@@ -1,66 +1,54 @@
 ---
-layout: fops
-title: "Easier ways to play"
+layout: opencs
+title: Easier Ways to Play
+description: "Arthritis or shaky hands make a mouse and small buttons hard. Nod to select lets you play every game with a gentle nod instead."
 permalink: /accessibility/
-back: "/play/"
-back_label: "All games"
-kicker: "Accessibility"
-heading: "Play every game, <em>hands-free</em>"
-lede: "Arthritis or shaky hands make a mouse and small buttons hard. Nod to select lets you play Spot the Scam, Bingo, and Size It Up with a gentle nod instead."
+custom_header: true
+hide: true
 ---
+<!-- markdownlint-disable MD033 -->
+<div class="fops-site">
 
-<section class="section" style="padding-top:1rem">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <h2>How Nod to select works</h2>
-      <ol class="steps">
-        <li><strong>Turn it on.</strong> Press <em>Nod to select</em> at the top of any page. Your browser asks to use the camera.</li>
-        <li><strong>Hold still for a moment.</strong> The camera learns how you sit when you're resting.</li>
-        <li><strong>Watch the gold outline.</strong> It moves slowly from button to button in the game.</li>
-        <li><strong>Nod to press.</strong> Chin down, then back up. The outlined button is pressed for you.</li>
-      </ol>
-      <div class="btn-row" style="margin-top:1.5rem">
-        <button class="btn btn-primary btn-lg" type="button" data-nod-toggle aria-pressed="false">Turn on Nod to select</button>
-      </div>
+{% include fops/header.html %}
+
+<section class="fops-page-title">
+    <div class="fops-container">
+        <h1>Easier Ways to Play</h1>
+        <p>Arthritis or shaky hands make a mouse and small buttons hard. Nod to select lets you play every game with a gentle nod instead.</p>
     </div>
-    <div class="card reveal">
-      <h2>Your privacy</h2>
-      <p>The camera only turns on when you choose it, and a panel in the corner shows it's on. All video is processed in this browser. Nothing is recorded, uploaded, or sent anywhere.</p>
-      <ul class="ticks">
-        <li>Turn it off any time with the <strong>Turn off</strong> button.</li>
-        <li>Choose a slow, medium, or quick highlight speed.</li>
-        <li>Only small, comfortable nods are needed. There is no timer.</li>
-      </ul>
-    </div>
-  </div>
 </section>
 
-<section class="section section-tint">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker">Also on every page</p>
-      <h2>Bigger text with one tap</h2>
-      <p>Use the three <strong>A</strong> buttons at the top of the page to make all the text larger. The site remembers your choice.</p>
+<section class="fops-section">
+    <div class="fops-container">
+        <h2>How Nod to Select Works</h2>
+        <div class="fops-cards">
+            <div class="fops-card fops-card--tint"><h3>1. Turn it on</h3><p>Press <strong>Nod to select</strong> under the menu on any page. Your browser asks to use the camera.</p></div>
+            <div class="fops-card fops-card--tint"><h3>2. Hold still</h3><p>The camera learns how you sit when you're resting.</p></div>
+            <div class="fops-card fops-card--tint"><h3>3. Watch the gold outline</h3><p>It moves slowly from button to button in the game.</p></div>
+            <div class="fops-card fops-card--tint"><h3>4. Nod to press</h3><p>Chin down, then back up. The outlined button is pressed for you.</p></div>
+        </div>
+        <div class="ocs__links" style="margin-top:1.25rem"><button class="ocs__btn large accent fill" type="button" data-nod-toggle aria-pressed="false">Turn On Nod to Select</button></div>
     </div>
-    <div class="programs">
-      <a class="program reveal" href="{{ '/scam-trainer/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="shield" %}</span>
-        <h3>Spot the Scam</h3>
-        <p>Nod to pick the message you trust, then nod on the red flag.</p>
-        <span class="program-go">Try it {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program reveal" href="{{ '/bingo/play/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="bingo" %}</span>
-        <h3>Bingo</h3>
-        <p>Numbers are marked for you. Nod on BINGO! when you have a line.</p>
-        <span class="program-go">Try it {% include fops/icon.html name="arrow" %}</span>
-      </a>
-      <a class="program reveal" href="{{ '/geography/' | relative_url }}">
-        <span class="program-icon">{% include fops/icon.html name="globe" %}</span>
-        <h3>Size It Up</h3>
-        <p>Nod on bigger or smaller to resize the place, then nod on Submit.</p>
-        <span class="program-go">Try it {% include fops/icon.html name="arrow" %}</span>
-      </a>
-    </div>
-  </div>
 </section>
+<section class="fops-section fops-section--honey">
+    <div class="fops-container">
+        <h2>Works in Every Game</h2>
+        <table class="fops-table">
+            <tr><th>Game</th><th>What a nod does</th></tr>
+            <tr><td><a href="{{ '/scam-trainer/' | relative_url }}">Spot the Scam</a></td><td>Picks the message you trust, then the red flag</td></tr>
+            <tr><td><a href="{{ '/bingo/play/' | relative_url }}">Bingo</a></td><td>Numbers are marked for you; nod on BINGO! when you have a line</td></tr>
+            <tr><td><a href="{{ '/geography/' | relative_url }}">Size It Up</a></td><td>Makes the place bigger or smaller, then submits</td></tr>
+        </table>
+    </div>
+</section>
+<section class="fops-section">
+    <div class="fops-container">
+        <h2>Your Privacy</h2>
+        <p>The camera only turns on when you choose it, and a panel in the corner shows it's on. All video is processed in this browser. Nothing is recorded, uploaded, or sent anywhere. Turn it off any time with the <strong>Turn off</strong> button.</p>
+        <p>Use the <strong>A A A</strong> buttons under the menu to make all the text bigger. The site remembers your choice.</p>
+    </div>
+</section>
+
+{% include fops/footer.html %}
+
+</div>
