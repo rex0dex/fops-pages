@@ -178,7 +178,8 @@ $fops-font: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
 }
 .form-message.ok { color: $fops-sage; font-weight: 700; }
 .form-message.error { color: $fops-clay; font-weight: 700; }
-.fops-site [role="tab"][aria-selected="true"] { background: $fops-sage !important; color: #fff !important; }
+.fops-site [hidden] { display: none !important; }
+.fops-site .ocs__btn[role="tab"][aria-selected="true"] { background: $fops-sage !important; color: #fff !important; }
 
 // ---------- Games ----------
 .fops-game { background: #fff; border: 1px solid $fops-line; border-radius: 12px; padding: 1.25rem; scroll-margin-top: 1rem; }
