@@ -2,8 +2,8 @@
 layout: opencs
 title: Friends of Poway Seniors
 description: "Helping Poway seniors stay connected, sharp, and safe."
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">
@@ -73,6 +73,17 @@ hide: true
         <div class="fops-cards">
             <div class="fops-card fops-card--tint"><h3>Our Mission</h3><p>To support our seniors and marginalized communities by providing volunteer opportunities, access to material provisions, and monetary support for municipal-run senior programming and other community outreach programs.</p></div>
             <div class="fops-card fops-card--tint"><h3>Our Vision</h3><p>For our seniors, and the community at large, to engage in, benefit from, and enjoy life to its fullest.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="fops-section fops-section--sage">
+    <div class="fops-container">
+        <h2>Visit Friends of Poway Seniors</h2>
+        <p>Everything on this site supports the real Friends of Poway Seniors. For Bingo, volunteering, the ReRuns Resale Shoppe, and the Senior Birthday Certificate Program, go to their official website or call (858) 668-4689.</p>
+        <div class="ocs__links">
+            <a class="ocs__btn large accent fill" href="https://www.friendsofpowayseniors.org/" style="background:#fff;color:#3f6b57 !important;border-color:#fff">friendsofpowayseniors.org</a>
+            <a class="ocs__btn large accent" href="tel:+18586684689">Call (858) 668-4689</a>
         </div>
     </div>
 </section>

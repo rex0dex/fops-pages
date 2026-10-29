@@ -110,6 +110,7 @@ minima:
   nav_pages:
     - navigation/fops/events.md
     - navigation/fops/play.md
+    - navigation/fops/accessibility.md
     - navigation/fops/board.md
     - navigation/fops/profile.md
     - navigation/about.md

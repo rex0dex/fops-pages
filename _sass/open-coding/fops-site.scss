@@ -120,7 +120,7 @@ $fops-font: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
   [data-size="large"] { font-size: 1.1em; }
   [data-size="xlarge"] { font-size: 1.25em; }
   [aria-pressed="true"] { background: $fops-sage !important; color: #fff !important; }
-  [data-nod-toggle] { margin-left: auto; }
+  [data-nod-toggle] { margin-left: 0.75rem; }
 }
 
 // ---------- Sections ----------
@@ -299,3 +299,10 @@ form.fops-card,
 .fops-card:has(form) .ocs__btn,
 #account .ocs__btn { align-self: flex-start; }
 .bingo-caller { text-align: center; }
+
+// ---------- Footer: the nonprofit's contact details ----------
+.fops-footer { text-align: left; padding: 2.5rem 0 1.5rem; }
+.fops-footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.fops-footer h3 { @include fops-text-color($fops-honey); font-size: 1em; margin: 0 0 0.5rem; }
+.fops-footer__cta { justify-content: flex-start !important; margin-bottom: 1.25rem; }
+.fops-footer__legal { font-size: 0.85em; opacity: 0.85; }

@@ -3,8 +3,8 @@ layout: opencs
 title: Easier Ways to Play
 description: "Arthritis or shaky hands make a mouse and small buttons hard. Nod to select lets you play every game with a gentle nod instead."
 permalink: /accessibility/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

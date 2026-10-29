@@ -3,8 +3,8 @@ layout: opencs
 title: Sign In
 description: "Sign in to save your progress in games and practice."
 permalink: /signin/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

@@ -3,8 +3,8 @@ layout: opencs
 title: Size It Up
 description: "A geography game. Make a place the right size next to another one. Every shape and size comes from real maps."
 permalink: /geography/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

@@ -107,7 +107,7 @@ window.handleGuestSignup = async function(event) {
     }
 
     // Step 2: Login with the credentials (whether account was just created or already existed)
-    const loginResponse = await fetch(`${pythonURI}/authenticate`, {
+    const loginResponse = await fetch(`${pythonURI}/api/authenticate`, {
       ...fetchOptions,
       method: 'POST',
       body: JSON.stringify(signupData)
@@ -194,7 +194,8 @@ window.handleGuestSignup = async function(event) {
 import { fetchPosts, createPost, updatePost, createReply, fetchReplies } from '{{ site.baseurl }}/assets/js/api/microblog.js';
 
 // Default Key for New MicroBlog Posts
-const pagePermalink = '{{page.permalink}}';
+// Same key the post list reads with (window.location.pathname), including the site's baseurl.
+const pagePermalink = '{{ page.url | relative_url }}';
 
 // Create/Edit Modal Functions
 function openModal({ mode, post = {} }) {

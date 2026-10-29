@@ -3,8 +3,8 @@ layout: opencs
 title: Events
 description: "Regular programs at the Mickey Cafagna Community Center, 13094 Civic Center Dr., Poway."
 permalink: /events/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

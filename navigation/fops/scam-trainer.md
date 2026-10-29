@@ -3,8 +3,8 @@ layout: opencs
 title: Spot the Scam
 description: "Practice spotting scams in a safe place, before a real one shows up on your phone or in your email."
 permalink: /scam-trainer/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

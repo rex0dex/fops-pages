@@ -3,8 +3,8 @@ layout: opencs
 title: Bingo
 description: "Weekly games, community, and prizes at Sycamore Hall, Mickey Cafagna Community Center."
 permalink: /bingo/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

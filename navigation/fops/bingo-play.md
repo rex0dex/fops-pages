@@ -3,8 +3,8 @@ layout: opencs
 title: Play Bingo
 description: "Large-print Bingo with a speaking caller. The computer calls the numbers, and you can pause any time."
 permalink: /bingo/play/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

@@ -3,8 +3,8 @@ layout: opencs
 title: About Us
 description: "Friends of Poway Seniors is a 501(c)(3) nonprofit supporting seniors and marginalized communities in Poway, California."
 permalink: /about/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

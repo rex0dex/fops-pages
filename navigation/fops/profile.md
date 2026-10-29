@@ -3,8 +3,8 @@ layout: opencs
 title: Your Profile
 description: "Tell us what you're interested in, and we'll put the games and events you care about first."
 permalink: /profile/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

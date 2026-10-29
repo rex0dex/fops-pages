@@ -3,8 +3,8 @@ layout: opencs
 title: Play & Learn
 description: "Games and practice made for Friends of Poway Seniors. Sign in to save your progress on any computer."
 permalink: /play/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">

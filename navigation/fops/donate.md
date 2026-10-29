@@ -3,8 +3,8 @@ layout: opencs
 title: Donate
 description: "Your gift supports senior programming and community outreach in Poway."
 permalink: /donate/
-custom_header: true
 hide: true
+microblog: true
 ---
 <!-- markdownlint-disable MD033 -->
 <div class="fops-site">
