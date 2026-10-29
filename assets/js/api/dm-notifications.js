@@ -1,4 +1,4 @@
-import { javaURI, fetchOptions, springEnabled } from './config.js';
+import { dmURI, dmOnPython, fetchOptions, springEnabled } from './config.js';
 
 // Navbar notification bell (_includes/themes/minima/header.html). The badge is the
 // number of different people who have sent the signed-in user unread direct messages.
@@ -12,8 +12,8 @@ const badge = document.getElementById('dmBellBadge');
 
 let requestSeq = 0;
 let pollTimer = null;
-// DMs live in Spring, so a Flask-only site (spring: false in _config.yml) never asks.
-let stopped = !springEnabled;
+// DMs live in Spring unless dm_backend: python, so a Flask-only site without it never asks.
+let stopped = !(springEnabled || dmOnPython);
 
 function render(summary) {
     if (!bell || !badge) return;
@@ -37,7 +37,7 @@ async function refresh() {
     if (stopped || !bell || !badge) return;
     const seq = ++requestSeq;
     try {
-        const res = await fetch(`${javaURI}/api/dm/unread`, fetchOptions);
+        const res = await fetch(`${dmURI}/api/dm/unread`, fetchOptions);
         if (seq !== requestSeq) return; // superseded by a newer refresh
         if (!res.ok) {
             if (res.status === 401 || res.status === 403 || res.status === 404) {

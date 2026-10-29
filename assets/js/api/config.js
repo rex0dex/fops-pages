@@ -32,6 +32,11 @@ export const GOOGLE_CLIENT_ID = "{{ site.google_client_id }}";
 // setting keeps Spring on.
 export const springEnabled = "{{ site.spring }}" !== "false";
 
+// Which backend serves direct messages (`dm_backend` in _config.yml). "python" means this
+// site's Flask backend, which has the same /api/dm routes as Spring; otherwise Spring.
+export const dmOnPython = "{{ site.dm_backend }}" === "python";
+export const dmURI = dmOnPython ? pythonURI : javaURI;
+
 export var javaWebSocketURI;
 // Port 8589 only exists on localhost; in production nginx forwards /ws-chat
 // through javaURI's normal port (443), same as announcement_chat.html and

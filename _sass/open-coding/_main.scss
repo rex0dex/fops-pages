@@ -66,4 +66,6 @@ select {
 .hidden {
     display: none;
 }
+@import "chat-shared";
+@import "dm-chat";
 @import "fops-site";

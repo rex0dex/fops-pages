@@ -306,3 +306,23 @@ form.fops-card,
 .fops-footer h3 { @include fops-text-color($fops-honey); font-size: 1em; margin: 0 0 0.5rem; }
 .fops-footer__cta { justify-content: flex-start !important; margin-bottom: 1.25rem; }
 .fops-footer__legal { font-size: 0.85em; opacity: 0.85; }
+
+// ---------- Messages page (OCS DM chat inside our page) ----------
+.fops-dm { text-align: left; }
+.fops-dm .dm-chat { background: #fff; border: 1px solid $fops-line; border-radius: 12px; overflow: hidden; }
+// OCS chat styles assume the dark OCS theme; on our light page make them readable.
+.fops-dm .announcement-chat {
+  --pref-text-color: #{$fops-ink};
+  color: $fops-ink;
+  font-family: $fops-font;
+  .chat-messages { background: $fops-paper !important; color: $fops-ink; text-align: left; font-size: 1em; }
+  .chat-msg, .chat-msg-main { text-align: left; }
+  .chat-msg-body { color: $fops-ink !important; font-size: 1.05em; }
+  .chat-msg-sender { color: $fops-sage !important; font-weight: 700; }
+  .chat-msg-time, .chat-day, .chat-subtitle, .chat-empty-hint { color: $fops-muted !important; }
+  .chat-title { @include fops-text-color($fops-ink); }
+  .dm-sidebar { background: $fops-sage-tint; }
+  .dm-conversation-list li { color: $fops-ink; }
+  .rt-composer, .chat-form { background: #fff; }
+  [contenteditable] { color: $fops-ink; font-size: 1.05em; }
+}
